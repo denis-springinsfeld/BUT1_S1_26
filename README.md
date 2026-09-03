@@ -386,7 +386,7 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
 .hero {
   height: 100vh;
   padding: 3rem 5rem;
-  // Attention : le chemin de l'image est relatif au fichier CSS, pas au HTML
+  /* Attention : le chemin de l'image est relatif au fichier CSS, pas au HTML*/
   background-image: url("../assets/bg.png");
   background-size: cover;
   background-position: center;
@@ -538,7 +538,7 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
   </head>
   <body>
     <header class="hero">
-      <img class="hero-logo" src="netflix.svg" alt="Logo Netflix" />
+      <img class="hero-logo" src="./assets/netflix.svg" alt="Logo Netflix" />
       <h1 class="hero-title">Stranger Things</h1>
       <div class="hero-meta">
         2019 &nbsp;|&nbsp; DIRECTOR: Shawn Levy &nbsp;|&nbsp; seasons: 3
@@ -593,7 +593,7 @@ body {
   /* Marges internes (1rem = 16px) */
   padding: 3rem 5rem;
   /* Image de fond */
-  background-image: url("../bg.png");
+  background-image: url("../assets/bg.png");
   /* Ajustement de l'image de fond */
   background-size: cover;
   /* Position de l'image de fond */
