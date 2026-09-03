@@ -34,7 +34,7 @@ Configurer Firefox comme navigateur par défaut sous Windows :
 3. Installez l'extension [**Live Server**](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) — elle recharge automatiquement le navigateur à chaque sauvegarde.
 4. Installez l'extension [**Prettier**](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) — elle formate automatiquement votre code.
 
-> [!TIPS]
+> [!TIP]
 > **Raccourci utile :** `Ctrl + S` pour sauvegarder. Live Server détecte la sauvegarde et rafraîchit la page instantanément.
 
 ---
