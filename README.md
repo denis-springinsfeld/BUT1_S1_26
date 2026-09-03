@@ -233,12 +233,12 @@ La **première chose** à écrire dans tout fichier CSS est le reset universel (
    GENERIC — Micro Reset navigateur
    ============================================ */
 * {
+  /* Force le calcul de la taille d'un élément en incluant son padding et sa bordure */
+  box-sizing: border-box;
   /* Supprime les marges externes */
   margin: 0;
   /* Supprime les marges internes */
   padding: 0;
-  /* Force le calcul de la taille d'un élément en incluant son padding et sa bordure */
-  box-sizing: border-box;
 }
 ```
 
