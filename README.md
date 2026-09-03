@@ -108,7 +108,12 @@ Dans le `<body>`, ajoutez les éléments suivants :
 | ------- | ------------------------------------- | ------------------------------------------------- |
 | `<h1>`  | Titre de niveau 1 (le plus important) | `<h1>HELLO HTML</h1>`                             |
 | `<p>`   | Paragraphe de texte                   | `<p>CSS is AWESOME</p>`                           |
+| `<a>`   | ancre                                 | `<a href="https://www.netflix.com">Netflix</a>`   |
 | `<img>` | Image                                 | `<img src="..." alt="description" width="120" />` |
+
+> **Attribut de `<a>` :**
+>
+> - `href` : lien vers une autre page ou un autre site (obligatoire)
 
 > **Attributs de `<img>` :**
 >
@@ -160,8 +165,8 @@ Voici le code HTML complet du hero
 
   <!-- Boutons d'action -->
   <div>
-    <button>PLAY NOW</button>
-    <button>ALL EPISODES</button>
+    <a href="#">PLAY NOW</a>
+    <a href="#">ALL EPISODES</a>
   </div>
 
   <!-- Footer du hero -->
@@ -253,6 +258,14 @@ body {
   /* Couleur du texte par défaut */
   color: white;
 }
+
+a,
+a:visited {
+  /* Couleur du texte blanc */
+  color: white;
+  /* Suppression du soulignement */
+  text-decoration: none;
+}
 ```
 
 ✅ **Vérification :** Tout le texte est maintenant en blanc.
@@ -320,8 +333,8 @@ Une bonne classe décrit **ce qu'est** l'élément, pas **comment il ressemble**
 
 2. Cas particulier pour les boutons : utilisez **multi-classes** pour combiner un style commun et un style spécifique :
 
-- `class="btn btn-primary"` pour le bouton rouge
-- `class="btn btn-outline"` pour le bouton transparent
+- `class="btn btn--primary"` pour le bouton rouge
+- `class="btn btn--outline"` pour le bouton transparent
 
 <details>
 <summary>Correction HTML et attributs `class`</summary>
@@ -356,8 +369,8 @@ Voici le code HTML complet du hero ainsi que les classes CSS correspondantes.
 
   <!-- Boutons d'action -->
   <div class="hero-actions">
-    <button class="btn btn-primary">PLAY NOW</button>
-    <button class="btn btn-outline">ALL EPISODES</button>
+    <a href="#" class="btn btn-primary">PLAY NOW</a>
+    <a href="#" class="btn btn-outline">ALL EPISODES</a>
   </div>
 
   <!-- Footer du hero -->
@@ -467,13 +480,8 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
   gap: 1rem;
 }
 
-/* Styles communs à tous les boutons */
+/* Styles communs à tous les ancre style bouton */
 .btn {
-  /* Marges internes */
-  padding: 0.8rem 2.5rem;
-  /* Taille de la police */
-  font-size: 0.85rem;
-  /* Graisse de la police */
   font-weight: 700;
   /* Espacement entre les lettres */
   letter-spacing: 0.1em;
@@ -486,7 +494,7 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
 }
 
 /* Bouton rouge plein */
-.btn-primary {
+.btn--primary {
   /* Couleur du texte */
   color: white;
   /* Couleur de fond */
@@ -496,11 +504,16 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
 }
 
 /* Bouton transparent avec bordure */
-.btn-outline {
+.btn--outline {
   /* Couleur du texte */
   color: white;
   /* Couleur de fond */
   background-color: transparent;
+}
+
+.btn:hover {
+  /* Opacité lors du survol */
+  opacity: 0.7;
 }
 ```
 
@@ -549,8 +562,8 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
         unravel a series of extraordinary mysteries.
       </p>
       <div class="hero-actions">
-        <button class="btn btn-primary">PLAY NOW</button>
-        <button class="btn btn-outline">ALL EPISODES</button>
+        <button class="btn btn--primary">PLAY NOW</button>
+        <button class="btn btn--outline">ALL EPISODES</button>
       </div>
       <p class="hero-footer">POPULAR THIS WEEK</p>
     </header>
@@ -583,6 +596,14 @@ body {
   font-family: sans-serif;
   /* Couleur du texte blanc */
   color: white;
+}
+
+a,
+a:visited {
+  /* Couleur du texte blanc */
+  color: white;
+  /* Suppression du soulignement */
+  text-decoration: none;
 }
 
 /* COMPONENTS */
@@ -664,7 +685,7 @@ body {
 }
 
 /* Bouton rouge plein */
-.btn-primary {
+.btn--primary {
   /* Couleur du texte */
   color: white;
   /* Couleur de fond */
@@ -674,11 +695,16 @@ body {
 }
 
 /* Bouton transparent avec bordure */
-.btn-outline {
+.btn--outline {
   /* Couleur du texte */
   color: white;
   /* Couleur de fond */
   background-color: transparent;
+}
+
+.btn:hover {
+  /* Opacité lors du survol */
+  opacity: 0.7;
 }
 ```
 
