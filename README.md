@@ -59,7 +59,7 @@ TD1/
 
 **Emmet** est un plugin intégré à VS Code qui génère du code HTML/CSS à partir de raccourcis.
 
-Dans votre fichier `index.html` vide, tapez **`!`** puis appuyez sur **`Tab`** :
+Dans votre fichier `index.html` vide, tapez **[`!`]** puis appuyez sur **[`Tab`]** :
 
 ```html
 <!DOCTYPE html>
@@ -96,7 +96,10 @@ Dans votre fichier `index.html` vide, tapez **`!`** puis appuyez sur **`Tab`** :
 </html>
 ```
 
-✅ **Vérification :** Ouvrez la page avec Live Server → page blanche, l'onglet doit afficher "Netflix — Stranger Things" et la console ne doit contenir aucune erreur.
+✅ **Validation :** Ouvrez la page avec Live Server → page blanche, l'onglet doit afficher "Netflix — Stranger Things" et console ne doit contenir aucune erreur.
+
+> [!TIP]
+> **Raccourci utile :** `Ctrl + Shift + I` pour ouvrir l'inspecteur d'élément dans Firefox.
 
 ### 2.3 Ajout de contenu
 
@@ -160,7 +163,7 @@ Dans le `<body>`, ajoutez le `<header>` avec toutes ses classes sémantiques :
 > **Pourquoi `class` et pas `id` ?**
 > Les classes permettent de réutiliser les styles. Un `id` est unique sur la page et ne doit jamais servir pour le CSS — uniquement pour les ancres (`<a href="#section">`) et le JavaScript.
 
-✅ **Vérification :** Rechargez la page — tout le texte brut s'affiche sans mise en forme.
+✅ **Validation :** Rechargez la page — tout le texte brut s'affiche sans mise en forme.
 
 ### 2.5 Lancement avec Live Server
 
@@ -444,6 +447,9 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
 
 ### Code final — `index.html`
 
+<details>
+<summary>Afficher/masquer le code HTML</summary>
+
 ```html
 <!DOCTYPE html>
 <html lang="fr">
@@ -476,47 +482,68 @@ Stylez maintenant chaque élément du hero avec ses classes sémantiques :
 </html>
 ```
 
+</details>
+
 ### Code final — `css/style.css`
+
+<details>
+<summary>Afficher/masquer le code CSS</summary>
 
 ```css
 /* GENERIC */
+/* Réinitialisation des styles par défaut - Micro Reset */
 * {
-  margin: 0;
-  padding: 0;
+  /* Le calcul de la taille inclut les bordures et le padding */
   box-sizing: border-box;
+  /* Marges externes à 0 */
+  margin: 0;
+  /* Marges internes à 0 */
+  padding: 0;
 }
 
-/* ELEMENTS */
+/* ELEMENTS- style pour tous les éléments HTML */
 body {
+  /* Famille de police sans-serif */
   font-family: sans-serif;
+  /* Couleur du texte blanc */
   color: white;
 }
 
 /* COMPONENTS */
 .hero {
+  /* hauteur de 100% de la vue */
   height: 100vh;
+  /* Marges internes (1rem = 16px) */
   padding: 3rem 5rem;
+  /* Image de fond */
   background-image: url("../bg.png");
+  /* Ajustement de l'image de fond */
   background-size: cover;
+  /* Position de l'image de fond */
   background-position: center;
+  /* Répétition de l'image de fond */
   background-repeat: no-repeat;
 }
 
-.hero-logo {
-  width: 120px;
-}
-
 .hero-title {
-  font-size: 4rem;
-  font-weight: bold;
+  /* Marges externes */
   margin: 8rem 0 1rem;
+  /* Taille de la police */
+  font-size: 4rem;
+  /* Graisse de la police */
+  font-weight: bold;
 }
 
 .hero-meta {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  /* Marges externes basse */
   margin-bottom: 1rem;
+  /* Taille de la police */
+  font-size: 1rem;
+  /* Graisse de la police */
+  font-weight: 600;
+  /* Espacement des lettres */
+  letter-spacing: 0.05em;
+  /* Opacité */
   opacity: 0.9;
 }
 
@@ -563,6 +590,8 @@ body {
   opacity: 0.9;
 }
 ```
+
+</details>
 
 ### Checklist de rendu
 
