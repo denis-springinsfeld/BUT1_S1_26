@@ -47,12 +47,10 @@ Organisez votre dossier `TD1` ainsi et copiez les assets fournis :
 
 ```plaintext
 TD1/
-├── index.html
-├── css/
-│   └ style.css
-└── assets/
-    ├ netflix.svg
-    └ bg.png
+├── assets/
+│   ├ bg.png
+│   └ netflix.svg
+└── index.html
 ```
 
 ### 2.2 Structure minimale avec Emmet
@@ -138,7 +136,7 @@ Dans le `<body>`, ajoutez les éléments suivants :
 ✅ **Validation :** Rechargez la page — tout le texte brut et l'image s'affiche sans mise en forme.
 
 <details>
-<summary>Correction HTML</summary>
+<summary><b>Correction HTML</b></summary>
 
 Voici le code HTML complet du hero
 
@@ -184,6 +182,17 @@ Voici le code HTML complet du hero
 
 1. Créez un dossier `css/` dans votre répertoire `TD1`.
 2. Dans ce dossier, créez un fichier `style.css`.
+
+```plaintext
+TD1/
+├── assets/
+│   ├ bg.png
+│   └ netflix.svg
+├── css/
+│   └ style.css
+└── index.html
+```
+
 3. **Liez** le fichier CSS à votre HTML en ajoutant dans le `<head>` :
 
 ```html
@@ -207,8 +216,8 @@ Consultez [MDN Web Docs](https://developer.mozilla.org/fr/) pour chacune des pro
 
 ```css
 body {
-  background-color: #f0f4f8;
-  color: #333333;
+  background-color: #2868a7;
+  color: #a22323;
   font-family: Arial, Helvetica, sans-serif;
 }
 ```
@@ -281,7 +290,7 @@ a:visited {
 Cible tous les éléments d'un type donné, exemple : tous les `<p>` de la page.
 
 ```css
-p {
+a {
   color: steelblue;
 }
 ```
@@ -293,12 +302,15 @@ Une **classe** s'applique à un ou plusieurs éléments. Elle se déclare avec l
 **HTML :**
 
 ```html
-<p class="important">Ce texte est mis en avant.</p>
-<p>Celui-ci est normal.</p>
-<p class="important">Celui-là aussi est mis en avant.</p>
+<div>
+  <a class="important" href="#">PLAY NOW</a>
+  <a href="#">ALL EPISODES</a>
+</div>
 ```
 
 **CSS :**
+
+Ajouter à votre `style.css` :
 
 ```css
 .important {
@@ -337,7 +349,7 @@ Une bonne classe décrit **ce qu'est** l'élément, pas **comment il ressemble**
 - `class="btn btn--outline"` pour le bouton transparent
 
 <details>
-<summary>Correction HTML et attributs `class`</summary>
+<summary><b>Correction HTML et attributs `class`</b></summary>
 
 Voici le code HTML complet du hero ainsi que les classes CSS correspondantes.
 
