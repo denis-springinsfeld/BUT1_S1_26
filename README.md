@@ -98,16 +98,17 @@ Dans votre fichier `index.html` vide, tapez **[`!`]** puis appuyez sur **[`Tab`]
 > [!TIP]
 > **Raccourci utile :** `Ctrl + Shift + I` pour ouvrir l'inspecteur d'élément dans Firefox.
 
-### 2.3 Ajout de contenu
+### 2.3 Ajout de contenu Netflix — Contenu du hero
 
 Dans le `<body>`, ajoutez les éléments suivants :
 
-| Balise  | Rôle                                  | Exemple                                           |
-| ------- | ------------------------------------- | ------------------------------------------------- |
-| `<h1>`  | Titre de niveau 1 (le plus important) | `<h1>HELLO HTML</h1>`                             |
-| `<p>`   | Paragraphe de texte                   | `<p>CSS is AWESOME</p>`                           |
-| `<a>`   | ancre                                 | `<a href="https://www.netflix.com">Netflix</a>`   |
-| `<img>` | Image                                 | `<img src="..." alt="description" width="120" />` |
+| Balise     | Rôle                                  | Exemple                                           |
+| ---------- | ------------------------------------- | ------------------------------------------------- |
+| `<header>` | En-tête de la page                    | `<header><h1>HELLO HTML</h1></header>`            |
+| `<h1>`     | Titre de niveau 1 (le plus important) | `<h1>HELLO HTML</h1>`                             |
+| `<p>`      | Paragraphe de texte                   | `<p>CSS is AWESOME</p>`                           |
+| `<a>`      | ancre                                 | `<a href="https://www.netflix.com">Netflix</a>`   |
+| `<img>`    | Image                                 | `<img src="..." alt="description" width="120" />` |
 
 > **Attribut de `<a>` :**
 >
@@ -120,10 +121,6 @@ Dans le `<body>`, ajoutez les éléments suivants :
 > - `width` : largeur en pixels — permet au navigateur de réserver l'espace avant que l'image soit chargée, évitant les "sauts" de mise en page
 
 > **Hiérarchie des titres :** HTML propose 6 niveaux de titres (`<h1>` à `<h6>`). Il ne doit y avoir qu'un seul `<h1>` par page (le titre principal). Vous devez respecter la hiérarchie des titres : pas de h4 sans h3, pas de h3 sans h2, etc.
-
-### 2.4 Application Netflix — Contenu du hero
-
-- Supprimer le contenu du `<body>`, ajoutez le `<header>` et les éléments du hero (cf. image dessus).
 
 - Faites un **clic droit** sur votre fichier `index.html` dans l'explorateur VS Code.
 - Sélectionnez **"Open with Live Server"**.
