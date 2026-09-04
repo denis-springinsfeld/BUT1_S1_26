@@ -98,7 +98,7 @@ Dans votre fichier `index.html` vide, tapez **[`!`]** puis appuyez sur **[`Tab`]
 > [!TIP]
 > **Raccourci utile :** `Ctrl + Shift + I` pour ouvrir l'inspecteur d'élément dans Firefox.
 
-### 2.3 Ajout de contenu du hero Netflix
+### 2.3 Ajouter le contenu au hero Netflix
 
 Dans le `<body>`, ajoutez les éléments suivants :
 
