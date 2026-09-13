@@ -1,0 +1,25 @@
+:root {
+  --bg-color: #c084fc;
+  --text-color: #1f2937;
+}
+
+/* -- Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -- Styles de base */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Exercice 00 */
+
+.title {
+  /* Utilisez des variables CSS */
+  color: #1f2937;
+  background-color: #c084fc;
+}

@@ -1,0 +1,82 @@
+:root {
+  --text-color: #1f2937;
+  --bg-color: #f3f4f6;
+  --border-color: #d1d5db;
+  --block-bg: #93c5fd;
+  --inline-bg: #86efac;
+  --inline-block-bg: #c084fc;
+}
+
+/* -- Reset CSS */
+* {
+  /* Réinitialise les styles par défaut */
+  margin: 0;
+  padding: 0;
+}
+/* -- Styles de base */
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+/* ----------------------------------------------
+
+> display: block, display: inline, display: inline-block
+
+À chaque élément, ajouter des propriétés CSS de :
+
+- propriété display si nécessaire,
+- taille,
+- de marge externe,
+- de marge interne.
+- de couleur de fond,
+- de bordure,
+
+Observez les différences entre les éléments block, inline et inline-block.
+
+--------------------------------------------------- */
+
+.block {
+  /* Par défaut l'élément p est de rendu block */
+  /* Propriétés de taille */
+
+  /* Propriétés de marge */
+
+  /* Propriétés de remplissage */
+
+  /* Propriétés de couleur de fond */
+  background-color: var(--block-bg);
+  /* Propriétés de bordure */
+  border: 1px solid var(--border-color);
+}
+
+.inline {
+  /* Par défaut l'élément span est de rendu inline */
+  /* Propriétés de taille */
+
+  /* Propriétés de marge */
+
+  /* Propriétés de remplissage */
+
+  /* Propriétés de couleur de fond */
+  background-color: var(--inline-bg);
+  /* Propriétés de bordure */
+  border: 1px solid var(--border-color);
+}
+
+.inline-block {
+  /* Par défaut l'élément a est inline modifier sa propriété display pour le rendre inline-block */
+
+  /* Propriétés de taille */
+
+  /* Propriétés de marge */
+
+  /* Propriétés de remplissage */
+
+  /* Propriétés de couleur de fond */
+  background-color: var(--inline-block-bg);
+  /* Propriétés de bordure */
+  border: 1px solid var(--border-color);
+}

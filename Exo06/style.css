@@ -1,0 +1,109 @@
+:root {
+  --bg-gradient-start: #f2f4f8;
+  --bg-gradient-end: #dfe7f5;
+  --text-color: #1f2937;
+  --heading-color: #111827;
+  --text-muted: #4b5563;
+  --separator-color: #6b7280;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(17, 24, 39, 0.15);
+  --btn-primary-bg: #2563eb;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #e5e7eb;
+  --btn-secondary-text: #111827;
+  --badge-bg: #ef4444;
+  --badge-text: #ffffff;
+}
+
+/* -- Reset default styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -- Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--bg-gradient-start),
+    var(--bg-gradient-end)
+  );
+  color: var(--text-color);
+}
+
+/* ---------------------------------------
+
+Exo 06 : Carte de visite
+
+Réalisez une carte de visite simple en réinvestissant les notions vues dans les exercices précédents (display, box model, centrage, positionnement).
+
+**Structure attendue dans Exo06 :**
+
+- Un **nom** (`Marie Dupont`) en élément **block**, sur sa propre ligne
+- Un **métier**, un **séparateur** `·` et un **email** en éléments **inline**, affichés à la suite sur la même ligne
+- Deux **boutons** (« Contacter » et « Portfolio ») en **inline-block** pour accepter `width`/`padding`, alignés côte à côte
+- Un **badge** « New » positionné en `absolute` en haut à droite de la carte (le conteneur `.card` doit être en `relative` pour servir de référent)
+------------------------------------------- */
+
+.card {
+  /* Contexte de positionnement des éléments enfants */
+
+  /* Définir la largeur de la carte */
+
+  /* Padding */
+
+  /* Margin */
+
+  /* Arrière-plan */
+
+  /* Coins arrondis */
+
+  /* Ombre portée */
+}
+
+.card__name {
+  /* Définir le style du nom */
+}
+
+.card__job {
+  /* Définir le style du métier */
+}
+
+.card__separator {
+  /* Définir le style du séparateur */
+}
+
+.card__email {
+  /* Définir le style de l'email */
+}
+
+.card__actions {
+  /* Centrer les boutons horizontalement */
+
+  /* Espacement entre les boutons */
+}
+
+.card__btn {
+  /* Définir le style en commun des boutons */
+}
+
+.card__btn:hover {
+  /* Définir le style au survol des boutons */
+}
+
+.card__btn--primary {
+  /* Définir le style du bouton principal */
+}
+
+.card__btn--secondary {
+  /* Définir le style du bouton secondaire */
+}
+
+.card__badge {
+  /* Positionner le badge dans le coin supérieur droit */
+
+  /* Style du badge */
+}
