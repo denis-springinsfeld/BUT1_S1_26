@@ -24,6 +24,9 @@ Exemple :
 
 L’intérêt est de centraliser les valeurs et de faciliter les changements globaux. Vous pouvez les utiliser dans les exercices pour garder un code plus lisible et plus cohérent.
 
+> **Question :** pourquoi utiliser des variables CSS plutôt que de répéter les mêmes valeurs dans tout le code ?
+> Dans le fichier `style.css` de l’exercice 00, utilisez les variables CSS pour définir les couleurs de fond et de texte des paragraphes. Si vous modifiez les variables dans `:root`, les changements se répercuteront automatiquement sur tous les éléments qui utilisent ces variables.
+
 ---
 
 ## Exercice 1 — Block, Inline et Inline-block
@@ -39,7 +42,9 @@ L’intérêt est de centraliser les valeurs et de faciliter les changements glo
 - de couleur de fond,
 - de bordure,
 
-Observez les différences entre les éléments **block**, **inline** et **inline-block**.
+> **Question :** quelle est la différence entre les éléments **block**, **inline** et **inline-block** ?
+> Observez les différences entre les éléments **block**, **inline** et **inline-block**.
+> Dupliquez les éléments `.block` `.inline-block` et observez comment ils se comportent dans le flux du document.
 
 ---
 
@@ -56,7 +61,7 @@ Appliquez aux deux boîtes les propriétés suivantes :
 
 Appliquez `box-sizing: content-box` à la première et `box-sizing: border-box` à la seconde. Calculez la largeur réelle affichée de chacune.
 
-**Question :** quelle est la largeur réelle de chaque boîte ?
+> **Question :** quelle est la largeur réelle de chaque boîte ?
 
 ---
 
@@ -70,8 +75,9 @@ Ajouter les propriétés nécessaires pour centrer chaque élément dans son con
 2. Élément de rendu **inline** avec `text-align: center` sur le parent
 3. Élément de rendu **inline-block** avec `text-align: center` sur le parent
 
-Observez le comportement de chaque élément et comment ils sont centrés.
-Observez également la différence entre les éléments **inline** et **inline-block**.
+> **Question :** quelles sont les différences entre ces trois méthodes de centrage ?
+> Observez le comportement de chaque élément et comment ils sont centrés.
+> Observez également la différence entre les éléments **inline** et **inline-block**.
 
 ---
 
@@ -83,6 +89,8 @@ Créez un composant « image avec badge ». L'image reste dans le flux normal. L
 
 Vous pouvez également changer le conteneur parent et observer comment le badge se positionne par rapport à ce nouveau parent.
 
+> **Question :** quelle est la différence entre `relative` et `absolute` ? Comment positionner l'élément dont la position est `absolute` par rapport à son parent ?
+
 ---
 
 ## Exercice 5 — Position fixed vs sticky
@@ -91,7 +99,7 @@ Vous pouvez également changer le conteneur parent et observer comment le badge 
 
 Créez une liste avec un en-tête qui reste fixe en haut du conteneur scrollable grâce à `position: fixed` et une « collé » en haut du conteneur scrollable grâce à `position: sticky`. Le conteneur a une hauteur fixe avec `overflow: auto`.
 
-**Question** : Quelles sont les différences entre `fixed` et `sticky` ? Comment positionner l'élément dont la position est`fixed`. Idem pour l'élément dont la position est `sticky` ?
+> **Question** : Quelles sont les différences entre `fixed` et `sticky` ? Comment positionner l'élément dont la position est`fixed`. Idem pour l'élément dont la position est `sticky` ?
 
 ---
 

@@ -16,9 +16,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
+p {
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
 /* Exercice 00 */
 
-.title {
+.paragraphe1 {
+  /* Utilisez des variables CSS */
+  color: #1f2937;
+  background-color: #c084fc;
+}
+
+.paragraphe2 {
   /* Utilisez des variables CSS */
   color: #1f2937;
   background-color: #c084fc;
