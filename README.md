@@ -537,11 +537,11 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 
 ```css
 .btn--small {
-  font-size: var(--font-size-small, 1rem);
+  font-size: var(--fs-small);
 }
 
 .btn--large {
-  font-size: var(--font-size-large, 1.25rem);
+  font-size: var(--fs-large);
 }
 ```
 
@@ -569,17 +569,19 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 >
 > le bouton devient rouge... mais au survol il repasse au bleu ! En effet, `.btn:hover` (2 sélecteurs : une classe + une pseudo-classe) est **plus spécifique** que `.btn--danger` (une classe) et l'emporte.
 >
-> La solution : **ne pas surcharger les propriétés, mais redéfinir les variables locales** de l'exercice 3 (`--btn-bg`, `--btn-color`, `--btn-bg-hover`, `--btn-color-hover`). Les règles `.btn` et `.btn:hover` restent inchangées et utilisent automatiquement les nouvelles valeurs.
+> La solution : **ne pas surcharger les propriétés, mais redéfinir les variables locales** prévues dans votre fichier CSS (`--btn-text`, `--btn-bg`, `--btn-border`, `--btn-shadow`, `--btn-color-hover`, `--btn-bg-hover`). Les règles `.btn` et `.btn:hover` restent inchangées et utilisent automatiquement les nouvelles valeurs.
 
 <details>
 <summary>💡 Exemple pour <code>btn--danger</code></summary>
 
 ```css
 .btn--danger {
-  --btn-bg: var(--clr-danger, #c62828);
-  --btn-color: var(--clr-white, #fff);
-  --btn-bg-hover: var(--clr-white, #fff);
-  --btn-color-hover: var(--clr-danger, #c62828);
+  --btn-text: var(--clr-danger);
+  --btn-bg: var(--clr-white);
+  --btn-border: var(--clr-danger);
+  --btn-shadow: var(--clr-danger);
+  --btn-color-hover: var(--clr-white);
+  --btn-bg-hover: var(--clr-danger);
 }
 ```
 
@@ -680,6 +682,7 @@ Nettoyer le code copié :
 .btn__icon {
   width: 1.25em;
   height: 1.25em;
+  vertical-align: middle;
 }
 ```
 
