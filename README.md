@@ -98,7 +98,7 @@ Ajouter une **URL relative** à l'attribut `href` d'une seconde ancre pour crée
 
 ➡️ Ajouter dans le `<body>` une balise `<a>` avec un attribut `href="#"`, le texte de lien « Basic » et un attribut de **classe `btn`**.
 
-➡️ Ouvrir le fichier `exo2_btn_basic_Styles/css/style.css`.
+➡️ Ouvrir le fichier `exo2_3_btn_basic_Styles/css/style.css`.
 Nous allons maintenant styliser notre bouton en CSS.
 
 > [!NOTE]
@@ -252,12 +252,10 @@ Ajoutez ensuite un `padding`, un `min-width` et un `min-height`.
 ```css
 .btn {
   /* 2. Display et Box Model */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
 
   min-width: 10ch;
-  min-height: 44px;
+  min-height: 2.75rem; /* 44px */
   padding: 0.25em 0.75em;
 }
 ```
@@ -348,7 +346,8 @@ Quatre états sont à traiter :
 
 .btn:active {
   box-shadow: none;
-  transform: translateY(1px);
+  transform: scale(0.95);
+  /* scale: .95 */
 }
 ```
 
@@ -622,8 +621,7 @@ Le **SVG (Scalable Vector Graphics)** est un format d'image vectorielle basé su
 > </svg>
 > ```
 
-➡️ Copier votre code de l'exercice 4 dans `exo5_btn_Icones`.
-Ouvrir les fichiers `exo5_btn_Icones/index.html` et `exo5_btn_Icones/css/style.css`.
+➡️ Ouvrir les fichiers `exo5_btn_Icones/index.html` et `exo5_btn_Icones/css/style.css`.
 
 ### ◼︎ 1. Icône avec `<img>`
 

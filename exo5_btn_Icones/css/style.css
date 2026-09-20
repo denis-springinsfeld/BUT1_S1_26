@@ -78,7 +78,7 @@ a {
   /* ➩ Largeur minimum du bouton : 10 caractères (unité ch) */
   min-width: 10ch;
   /*  ➩ Hauteur minimum 44px */
-  min-height: 44px;
+  min-height: 2.75rem;
 
   /* ➩ Marge interne de 8px en haut/bas et 12px à droite/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
   padding: 0.5em 0.75em;
