@@ -704,7 +704,7 @@ Nettoyer le code copié :
 | HTML plus léger et lisible                  |                 |                |
 | Réutilisable simplement sur plusieurs pages |                 |                |
 
-### ◼︎ Pour aller plus loin (facultatif)
+### ◼︎ Pour aller plus loin
 
 - Créer un MODIFICATEUR `btn--icon` pour un bouton **avec icône seule** (sans texte), de 44 × 44 px minimum.
 
