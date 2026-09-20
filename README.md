@@ -79,7 +79,7 @@ Ajouter une **URL relative** à l'attribut `href` d'une seconde ancre pour crée
 ➡️ Ajouter l'URL `#rubrique-down` à l'attribut `href` de votre ancre.
 
 > [!NOTE]
-> L'identifiant `rubrique-down` sert à relier l'ancre à cet élément. Un `id` doit être **unique** dans la page.
+> L'identifiant `id=rubrique-down` sert à relier l'ancre à cet élément. Un `id` doit être **unique** dans la page.
 >
 > ```html
 > <!-- Rubrique à relier -->
@@ -88,8 +88,7 @@ Ajouter une **URL relative** à l'attribut `href` d'une seconde ancre pour crée
 >
 > Le texte de substitution rend la page assez longue pour qu'on **voie** la page défiler jusqu'à la rubrique. Le second paragraphe, placé après le titre, permet à celui-ci de remonter tout en haut de la fenêtre.
 
-> [!NOTE]
-> Ajouter en bas de page un lien « Retour en haut » (`href="#"`).
+➡️ Ajouter en bas de page un lien « Retour en haut » (`href="#"`).
 
 ---
 
