@@ -94,7 +94,7 @@ Ajouter une **URL relative** à l'attribut `href` d'une seconde ancre pour crée
 
 ## Exercice 2 : Basic Button — Styles CSS
 
-➡️ Ouvrir le fichier `exo2_btn_basic_Styles/index.html`.
+➡️ Ouvrir le fichier `exo2_3_btn_basic_Styles/index.html`.
 
 ➡️ Ajouter dans le `<body>` une balise `<a>` avec un attribut `href="#"`, le texte de lien « Basic » et un attribut de **classe `btn`**.
 
@@ -416,6 +416,8 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 
 > [!NOTE]
 > Les variables locales se placent **en tête de la règle**, avant toutes les autres propriétés.
+> Le nommages des variable s locales commence par le nom du composant (`btn`) pour éviter les collisions avec d'autres composants et sont sémantiques : `bg` pour background, `color` pour la couleur du texte, `hover` pour l'état survolé.
+> Sémantique = on comprend à quoi sert la variable sans avoir à regarder sa valeur.
 
 <details>
 <summary>💡 Solution</summary>
@@ -423,10 +425,10 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 ```css
 :root {
   /* Couleurs */
-  --color-surface: #fff;
-  --color-text: #000;
-  --color-primary: #3c57ce;
-  --color-on-primary: #fff;
+  --clr-white: rgb(250, 250, 250);
+  --clr-black: rgb(23, 23, 23);
+  --clr-gray: rgb(113, 113, 122);
+  --clr-blue: rgb(60, 87, 206);
 
   /* Typographie */
   --font-family: "Roboto", sans-serif;
@@ -441,10 +443,10 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 
 .btn {
   /* 0. Variables locales du composant */
-  --btn-bg: var(--color-surface);
-  --btn-color: var(--color-text);
-  --btn-bg-hover: var(--color-primary);
-  --btn-color-hover: var(--color-on-primary);
+  --btn-bg: var(--clr-white);
+  --btn-color: var(--clr-black);
+  --btn-bg-hover: var(--clr-blue);
+  --btn-color-hover: var(--clr-white);
 
   /* 2. Display et Box Model */
   display: inline-block;
@@ -476,11 +478,6 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
   background-color: var(--btn-bg-hover);
 }
 
-.btn:focus-visible {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
 .btn:active {
   box-shadow: none;
   transform: translateY(1px);
@@ -504,6 +501,8 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 
 ## Exercice 4 : Basic Button + Variantes de style (BEM)
 
+➡️ Ouvrir le fichier `exo4_btn_Styles_variants/index.html` et le fichier `exo4_btn_Styles_variants/css/style.css`.
+
 ### La convention BEM
 
 [Documentation BEM](https://getbem.com/introduction/)
@@ -517,12 +516,9 @@ Les propriétés `background-color` et `color` de `.btn` et de `.btn:hover` util
 >
 > Le BLOC est la classe de base qui définit les propriétés communes. Le MODIFICATEUR **s'ajoute** à la classe du bloc (il ne la remplace jamais) et ne définit que ce qui change.
 
-➡️ Copier votre code de l'exercice 3 dans `exo4_btn_Styles_variants`.
-Ouvrir les fichiers `exo4_btn_Styles_variants/index.html` et `exo4_btn_Styles_variants/css/style.css`.
-
 ### ◼︎ 1. Tailles
 
-➡️ Dans le HTML, créer un petit bouton avec les classes `btn` **et** `btn--small`.
+➡️ Dans le HTML, ajouter un bouton avec les classes `btn` **et** `btn--small`.
 
 > [!NOTE]
 >
@@ -530,24 +526,23 @@ Ouvrir les fichiers `exo4_btn_Styles_variants/index.html` et `exo4_btn_Styles_va
 > <a href="#" class="btn btn--small">Small</a>
 > ```
 
-➡️ Dans le CSS, définir le MODIFICATEUR `btn--small` **en modifiant uniquement la taille de la police**. Comme le `padding` est en `em`, il se redimensionne proportionnellement à cette taille ; `min-width` et `min-height` veillent à ce que le bouton reste une zone tactile suffisante.
-
-➡️ Créer de même un bouton `btn btn--large` avec une police plus grande.
+➡️ Dans le CSS, définir le MODIFICATEUR `btn--small` **en modifiant uniquement la taille de la police**.
 
 > [!TIP]
-> Pour que les trois tailles soient bien distinctes, la taille de base est de `1rem`. Choisissez par exemple `0.875rem` pour `small` et `1.25rem` pour `large`.
-> Comme `min-height` impose 44 px partout, les différences se voient surtout sur la taille du texte et la largeur du bouton. Est-ce acceptable pour un bouton « small » ? (Voir le critère WCAG 2.5.8 : 24 px minimum en AA.)
+> Comme le `padding` est en `em`, il se redimensionne proportionnellement à cette taille ; `min-width` et `min-height` veillent à ce que le bouton reste une zone tactile suffisante.
+
+➡️ Créer de même un bouton `btn btn--large` avec une police plus grande.
 
 <details>
 <summary>💡 Solution</summary>
 
 ```css
 .btn--small {
-  font-size: 0.875rem;
+  font-size: var(--font-size-small, 1rem);
 }
 
 .btn--large {
-  font-size: 1.25rem;
+  font-size: var(--font-size-large, 1.25rem);
 }
 ```
 
@@ -582,30 +577,16 @@ Ouvrir les fichiers `exo4_btn_Styles_variants/index.html` et `exo4_btn_Styles_va
 
 ```css
 .btn--danger {
-  --btn-bg: #c62828;
-  --btn-color: #fff;
-  --btn-bg-hover: #a51f1f;
-  --btn-color-hover: #fff;
+  --btn-bg: var(--clr-danger, #c62828);
+  --btn-color: var(--clr-white, #fff);
+  --btn-bg-hover: var(--clr-white, #fff);
+  --btn-color-hover: var(--clr-danger, #c62828);
 }
 ```
 
 </details>
 
-**Palette conseillée** (contrastes texte/fond de l'état normal, tous supérieurs à 4,5:1) :
-
-| Modificateur   | Fond      | Texte  | Contraste | Fond au survol |
-| -------------- | --------- | ------ | --------- | -------------- |
-| `btn--primary` | `#3c57ce` | `#fff` | ≈ 6,1:1   | `#2c43a6`      |
-| `btn--success` | `#1a7f37` | `#fff` | ≈ 5,1:1   | `#146c2e`      |
-| `btn--warning` | `#ffc107` | `#000` | ≈ 12,9:1  | `#e0a800`      |
-| `btn--danger`  | `#c62828` | `#fff` | ≈ 5,6:1   | `#a51f1f`      |
-
-> [!NOTE]
-> Sur fond jaune, le texte doit rester **noir** : du texte blanc serait illisible.
-
 ### ◼︎ 4. Combiner
-
-➡️ Placer vos boutons dans un conteneur `<div class="btn-group">` (`display: flex`, `flex-wrap: wrap` et `gap: 1rem`) pour les espacer proprement.
 
 ➡️ Afficher toutes les combinaisons de classes suivantes, par exemple :
 
@@ -617,11 +598,12 @@ Ouvrir les fichiers `exo4_btn_Styles_variants/index.html` et `exo4_btn_Styles_va
 
 - `btn--outline` : fond transparent et bordure colorée.
 - `btn--block` : bouton sur toute la largeur du conteneur.
-- État désactivé : `aria-disabled="true"` sur un `<a>` et style associé (`[aria-disabled="true"]`). Pourquoi un lien ne peut-il pas avoir l'attribut `disabled` ?
 
 ---
 
 ## Exercice 5 : Basic Button + Icônes
+
+➡️ Ouvrir le fichier `exo5_btn_Icones/index.html` et le fichier `exo5_btn_Icones/css/style.css`.
 
 Nous allons maintenant ajouter des icônes à nos boutons, avec la bibliothèque d'icônes [Heroicons](https://heroicons.com).
 
@@ -691,20 +673,13 @@ Nettoyer le code copié :
 
 ➡️ Dans le CSS :
 
-- ajouter un espace entre l'icône et le texte dans `.btn` (`gap`, grâce à `inline-flex`) ;
-- écrire la règle `.btn__icon` : une taille en `em` (pour qu'elle suive la `font-size` du bouton, donc les modificateurs `small` et `large`), et `flex-shrink: 0` pour éviter que l'icône ne se déforme.
+- écrire la règle `.btn__icon` : une taille en `em` (pour qu'elle suive la `font-size` du bouton, donc les modificateurs `small` et `large`).
 
 <details>
 <summary>💡 Solution</summary>
 
 ```css
-.btn {
-  /* … (dans le bloc 2. Display et Box Model) */
-  gap: 0.5em;
-}
-
 .btn__icon {
-  flex-shrink: 0;
   width: 1.25em;
   height: 1.25em;
 }
@@ -731,7 +706,6 @@ Nettoyer le code copié :
 ### ◼︎ Pour aller plus loin (facultatif)
 
 - Créer un MODIFICATEUR `btn--icon` pour un bouton **avec icône seule** (sans texte), de 44 × 44 px minimum.
-  Sans texte visible, le lien n'a plus de nom accessible : ajouter `aria-label="Ajouter"` sur le `<a>`.
 
 ---
 

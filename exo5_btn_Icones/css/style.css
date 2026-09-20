@@ -1,0 +1,227 @@
+/* ---------------------------------------------------------------------
+  1. Importation d'une police de caratère depuis https://fonts.google.com/
+------------------------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ---------------------------------------------------------------------
+  2. Variables CSS
+------------------------------------------------------------------------ */
+
+:root {
+  --clr-white: rgb(250, 250, 250);
+  --clr-black: rgb(23, 23, 23);
+  --clr-gray: rgb(113, 113, 122);
+
+  --clr-default: #404040;
+  --clr-primary: #1489ff;
+  --clr-success: #00ce0d;
+  --clr-warning: #f1da19;
+  --clr-danger: #ff2323;
+
+  --ff-sans: "Roboto", sans-serif;
+  --fw-bold: 700;
+
+  --fs-small: 1rem;
+  --fs-normal: 1.5rem;
+  --fs-large: 2rem;
+
+  --shadow: 8px;
+  --rounded: 2rem;
+}
+
+/* ---------------------------------------------------------------------
+  3. RESET CSS
+------------------------------------------------------------------------ */
+*,
+*::after,
+*::before {
+  /* ➩ Cette propriété CSS définit la façon dont la hauteur et la largeur totale d'un élément est calculée. Ici le navigateur prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur. */
+  box-sizing: border-box;
+  /* ➩ Supprime les marges et le remplissage par défaut de tous les éléments. */
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------------
+  4. STYLES DE BASE
+------------------------------------------------------------------------ */
+
+body {
+  /* ➩ Utilisation de la font 'Roboto' ou d'une fonte sans empattement avec une variable css*/
+  font-family: var(--ff-sans);
+}
+
+a {
+  /* ➩ Supprime la décoration des liens (soulignement) */
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------
+  5. COMPOSANTS
+------------------------------------------------------------------------ */
+
+/* --- Composant Bouton ----------------------------------------------- */
+
+.btn {
+  /* 0. Variables locales du composant */
+  --btn-bg: var(--clr-white);
+  --btn-text: var(--clr-black);
+  --btn-border: var(--clr-black);
+  --btn-shadow: var(--clr-gray);
+  --btn-color-hover: var(--clr-black);
+  --btn-bg-hover: var(--clr-white);
+
+  /* 2 - Display & Box Model -------------------- */
+  /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
+  display: inline-block;
+
+  /* ➩ Largeur minimum du bouton : 10 caractères (unité ch) */
+  min-width: 10ch;
+  /*  ➩ Hauteur minimum 44px */
+  min-height: 44px;
+
+  /* ➩ Marge interne de 8px en haut/bas et 12px à droite/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
+  padding: 0.5em 0.75em;
+  /* ➩ Marge externe de  8px en haut/droite/bas/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
+  margin: 0.5em;
+
+  /* 3 - Typography ------------------------------ */
+  /* ➩ Taille de la font 20px. ⚠️ utiliser des unités relative à la taille de la police de l'élément racine. */
+  /* ➩ Utilisation d'une variable css*/
+  font-size: var(--fs-normal);
+  /* ➩ Graisse utilisée pour le texte : bold */
+  /* ➩ Utilisation d'une variable css*/
+  font-weight: var(--fw-bold);
+  /* ➩ Première lettre en capitale */
+  text-transform: capitalize;
+  /* ➩ Alignement du texte centré dans l'élément */
+  text-align: center;
+  /* ➩ Couleur du texte noir */
+  /* ➩ Utilisation d'une variable css*/
+  color: var(--btn-text);
+
+  /* 4 - Viusel & Graphique ----------------------- */
+  /* ➩ Couleur de l'arrière plan : blanc  */
+  /* ➩ Utilisation d'une variable css*/
+  background-color: var(--btn-bg);
+  /* ➩ Utilisation d'une variable css pour la couleur uniquement */
+  /* ➩ Bordure de 3px de largeur, solid et noir */
+  border: solid 3px var(--btn-border);
+
+  /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 8px sur l'axe des abcisses et de 8px sur l'axe des ordonnées */
+  /* ➩ Utilisation d'une variable css*/
+  box-shadow: 8px 8px 0 var(--btn-shadow);
+
+  /* 5 - Transitions & Transformations --------------*/
+  /* ➩ Transition sur toutes les propriétés de 3ms avec une accélération ease-in-out.
+  Elle permet de définir la transition entre deux états d'un élément.*/
+  transition: all 0.3s ease-in-out;
+}
+
+/* La pseudo-classe :hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer. */
+
+.btn:hover {
+  /* 4. Effets visuels et graphiques  -------------- */
+  color: var(--btn-color-hover);
+  background-color: var(--btn-bg-hover);
+  /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 4px sur l'axe des abcisses et de 4px sur l'axe des ordonnées */
+  /* ➩ Utiliser une variable css ainsi que la fonction calc() pour effectuer des opérations de calcul (Attention aux espaces) */
+  box-shadow: calc(var(--shadow) / 2) calc(var(--shadow) / 2) 0
+    var(--btn-shadow);
+}
+
+/* La pseudo-classe :active permet de spécifier l'apparence d'un élément au moment où l'utilisateur l'active (par exemple, en cliquant sur un bouton). */
+
+.btn:active {
+  /* 4. Effets visuels et graphiques  -------------- */
+  /* ➩ Propriété permetant de modifier la taille d'un élément avec un facteur d'échelle sur deux dimensions : .95  */
+  transform: scale(0.95);
+  /* scale: .95; */
+}
+
+/* - BEM--Elements -- */
+
+.btn__icon {
+  /* ➩ Taille de l'icône en em pour qu'elle suive la taille de la police du bouton */
+
+  /* ➩ Alignement vertical de l'icône */
+}
+
+/* - BEM--Modifier -- */
+
+.btn--icon {
+  /* ➩ Style pour un bouton avec icône seule (sans texte) */
+  /* ➩ Largeur et hauteur minimum de 44px */
+
+  /* ➩ Marge interne de 0px en haut/bas et 0px*/
+}
+
+/* - BEM--Modifier -- */
+
+/* ➩ Style small (--modifier) :
+diminuer la taille de la police --- */
+.btn--small {
+  font-size: var(--fs-small);
+}
+
+/* Style large (--modifier) */
+
+.btn--large {
+  font-size: var(--fs-large);
+}
+
+/* Style rounded (--modifier) */
+
+.btn--rounded {
+  border-radius: var(--rounded);
+}
+
+/* Style TOUT en CAPITALE (--modifier) */
+
+.btn--capitale {
+  text-transform: uppercase;
+}
+
+/* Style primary (--modifier) */
+
+.btn--primary {
+  --btn-text: var(--clr-primary);
+  --btn-bg: var(--clr-white);
+  --btn-border: var(--clr-primary);
+  --btn-shadow: var(--clr-primary);
+  --btn-color-hover: var(--clr-white);
+  --btn-bg-hover: var(--clr-primary);
+}
+
+/* Style sucess (--modifier) */
+
+.btn--success {
+  --btn-text: var(--clr-success);
+  --btn-bg: var(--clr-white);
+  --btn-border: var(--clr-success);
+  --btn-shadow: var(--clr-success);
+  --btn-color-hover: var(--clr-white);
+  --btn-bg-hover: var(--clr-success);
+}
+
+/* Style warning (--modifier) */
+
+.btn--warning {
+  --btn-text: var(--clr-warning);
+  --btn-bg: var(--clr-white);
+  --btn-border: var(--clr-warning);
+  --btn-shadow: var(--clr-warning);
+  --btn-color-hover: var(--clr-white);
+  --btn-bg-hover: var(--clr-warning);
+}
+
+/* Style danger (--modifier) */
+
+.btn--danger {
+  --btn-text: var(--clr-danger);
+  --btn-bg: var(--clr-white);
+  --btn-border: var(--clr-danger);
+  --btn-shadow: var(--clr-danger);
+  --btn-color-hover: var(--clr-white);
+  --btn-bg-hover: var(--clr-danger);
+}

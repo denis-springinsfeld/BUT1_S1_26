@@ -1,0 +1,88 @@
+/* ---------------------------------------------------------------------
+  1. Importation d'une police de caratère depuis https://fonts.google.com/
+------------------------------------------------------------------------ */
+/* ➩ Copier le code d'importation depuis Google Fonts de Roboto et le coller ici */
+
+/* ---------------------------------------------------------------------
+  2. Variables CSS
+------------------------------------------------------------------------ */
+:root {
+  /* Exercice 3 */
+}
+
+/* ---------------------------------------------------------------------
+  3. RESET CSS
+------------------------------------------------------------------------ */
+/* Un "reset" CSS permettant d'harmoniser les styles par défaut des navigateurs est systématiquement appliqué en début de projet. */
+*,
+*::after,
+*::before {
+  /* ➩ Cette propriété CSS définit la façon dont la hauteur et la largeur totale d'un élément est calculée. Ici le navigateur prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur. */
+  /* ➩ Supprime les marges et le remplissage par défaut de tous les éléments. */
+}
+
+/* ---------------------------------------------------------------------
+  4. STYLES DE BASE
+------------------------------------------------------------------------ */
+
+body {
+  /* ➩ Utilisation de la font 'Roboto' ou d'une fonte sans empattement - (cascade)*/
+}
+
+a {
+  /* ➩ Supprime la décoration des liens (soulignement) */
+}
+
+/* ---------------------------------------------------------------------
+  5. COMPOSANTS
+------------------------------------------------------------------------ */
+
+/* Composant Button */
+.btn {
+  /* 0. Variables locales du composant */
+  /* 2 - Display & Box Model -------------------- */
+  /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
+
+  /* ➩ Largeur minimum du bouton : 10 caractères (unité ch) */
+
+  /*  ➩ Hauteur minimum 44px */
+
+  /* ➩ Marge interne de 8px en haut/bas et 12px à droite/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
+
+  /* ➩ Marge externe de  8px en haut/droite/bas/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
+
+  /* 3 - Typography ------------------------------ */
+  /* ➩ Taille de la font 20px. ⚠️ utiliser des unités relative à la taille de la police de l'élément racine. */
+
+  /* ➩ Graisse utilisée pour le texte : bold */
+
+  /* ➩ Première lettre en capitale */
+
+  /* ➩ Alignement du texte centré dans l'élément */
+
+  /* ➩ Couleur du texte noir */
+
+  /* 4 - Effets Viusels & Graphiques ----------------------- */
+  /* ➩ Couleur de l'arrière plan : blanc  */
+
+  /* ➩ Bordure de 3px de largeur, solid et noir */
+
+  /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 8px sur l'axe des abcisses et de 8px sur l'axe des ordonnées */
+
+  /* 5 - Transitions & Transformations --------------*/
+  /* ➩ Transition sur toutes les propriétés de 3ms avec une accélération ease-in-out.
+  Elle permet de définir la transition entre deux états d'un élément.*/
+}
+
+/* La pseudo-classe :hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer. */
+.btn:hover {
+  /* 4. Effets visuels et graphiques  -------------- */
+  /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 4px sur l'axe des abcisses et de 4px sur l'axe des ordonnées */
+}
+
+/* La pseudo-classe :active permet de cibler un élément lorsque celui-ci est activé par l'utilisateur.  */
+.btn:active {
+  /* 4. Effets visuels et graphiques -------------- */
+
+  /* ➩ Propriété permetant de modifier la taille d'un élément avec un facteur d'échelle sur deux dimensions : .95  */
+}

@@ -1,0 +1,58 @@
+/* Ajout de Police depuis Google Font */
+/*(!) Attention avec le nombre de typos importées : le mieux, ce limiter à 3 typos, la différence de graisse comptant pour une typo à part entière
+*/
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+
+:root {
+  --def-color-primary: 24 49 79;
+  --def-color-secondary: 139 190 178;
+  --def-color-light: 245 245 245;
+  --def-color-white: 255 255 255;
+  --def-ff-serif: "Noto Serif", serif;
+  --def-fw-400: 400;
+}
+
+body {
+  font-family: var(--def-ff-serif);
+  background: rgb(var(--def-color-light));
+  color: rgb(var(--def-color-primary));
+}
+
+h1 {
+  margin: 3em 0;
+  font-family:var(--def-ff-serif);
+  font-weight: var(--def-fw-400);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h2 {
+  margin: 3em 0 1em;
+  font-family:var(--def-ff-serif);
+  font-weight: var(--def-fw-400);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-align: center;
+  color: rgb(var(--def-color-secondary));
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 20%;
+  margin: 1em auto 0;
+  border-bottom: 1px solid rgb(var(--def-color-primary) / .25);
+}
+
+section {
+  width: 80%;
+  margin: 3em auto;
+  padding: 3em 3em 5em;
+  background: rgb(var(--def-color-white));
+  box-shadow: 0 0 20px rgba(var(--def-color-primary)/.25);
+  text-align: center;
+}
