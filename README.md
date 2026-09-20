@@ -705,6 +705,8 @@ Nettoyer le code copié :
 
 - Créer un MODIFICATEUR `btn--icon` pour un bouton **avec icône seule** (sans texte), de 44 × 44 px minimum.
 
+- Dans ce cas la solution `inline-block` s'avère imparfaite, et nécessite des hacks pour parfaire le centrage vertical des svg. Nous aborderons prochainement les solutions CSS modernes pour le centrage vertical, à savoir `Flexbox` ce semestre et `Grid` le semestre prochain.
+
 ---
 
 ## Plus
