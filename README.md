@@ -334,7 +334,7 @@ Quatre états sont à traiter :
 
 ➡️ Écrire les règles `.btn:hover`, `.btn:focus-visible` et `.btn:active`.
 
-- Chan
+- Au survol de l'ancre, changer la couleur de fond et la couleur du texte.
 - À l'appui, donner l'impression que le bouton s'enfonce (`transform` et `box-shadow`).
 
 <details>
@@ -403,7 +403,7 @@ Des sites et applications complexes ont des feuilles de style où de nombreuses 
 
 ➡️ Dans `:root`, déclarer des variables pour toutes les valeurs « de design » de votre bouton :
 
-- les **couleurs** : surface (fond du bouton), texte, couleur principale (`#3c57ce`), texte sur la couleur principale ;
+- les **couleurs** : surface (fond du bouton), texte, couleur principale, texte sur la couleur principale ;
 - la **police** de caractères ;
 - le **rayon de bordure** ;
 - l'**ombre portée** ;
