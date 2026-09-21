@@ -215,7 +215,7 @@ La propriété CSS `box-sizing` définit la façon dont la largeur et la hauteur
 
 ➡️ Écrire les règles CSS qui :
 
-- appliquent la police `Roboto` à la page, avec un padding et un fond gris très clair pour que le bouton blanc reste visible ;
+- appliquent la police `Roboto` à la page.
 - suppriment le soulignement de tous les liens (propriété `text-decoration`).
 
 <details>
