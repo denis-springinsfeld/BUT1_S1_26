@@ -72,9 +72,11 @@ Ajouter une **URL relative** à l'attribut `href` d'une seconde ancre pour crée
 
 #### ◼︎ Créer un lien vers un élément de la même page
 
-➡️ Ajouter un paragraphe `<p>` après votre ancre. Utiliser **Emmet** pour créer du texte de substitution : `p>lorem1000` puis `Tab`.
+➡️ Sur la page `index.html`, ajouter une nouvelle ancre `<a href="">aller en bas</a>`.
 
-➡️ Ajouter ensuite un titre avec l'identifiant `rubrique-down`, puis un second paragraphe de texte de substitution.
+➡️ Ajouter un paragraphe `<p>` après cette ancre. Utiliser **Emmet** pour créer du texte de substitution : `p>lorem1000` puis `Tab`.
+
+➡️ Ajouter ensuite un titre avec l'identifiant `id="rubrique-down"`, puis un second paragraphe de texte de substitution.
 
 ➡️ Ajouter l'URL `#rubrique-down` à l'attribut `href` de votre ancre.
 
@@ -89,6 +91,11 @@ Ajouter une **URL relative** à l'attribut `href` d'une seconde ancre pour crée
 > Le texte de substitution rend la page assez longue pour qu'on **voie** la page défiler jusqu'à la rubrique. Le second paragraphe, placé après le titre, permet à celui-ci de remonter tout en haut de la fenêtre.
 
 ➡️ Ajouter en bas de page un lien « Retour en haut » (`href="#"`).
+
+➡️ Faire de même avec la page `page2.html` : un lien de la page `index.html` vers le bas de la page2.
+
+> [!WARNING]
+> Assurez-vous que les identifiants `id` sont uniques dans chaque page.
 
 ---
 
@@ -124,9 +131,9 @@ Nous allons maintenant styliser notre bouton en CSS.
 >
 > 0. **Variables locales du composant** : déclarées en tête de la règle
 > 1. **Positionnement** : `position`, `top`, `right`, `bottom`, `left`, `z-index`
-> 2. **Display et Box Model** : `display`, `width`, `height`, `margin`, `padding`, `border`
+> 2. **Display et Box Model** : `display`, `width`, `height`, `margin`, `padding`
 > 3. **Typographie** : `font-*`, `line-height`, `text-align`, `color`
-> 4. **Effets visuels et graphiques** : `background`, `border-radius`, `box-shadow`, `opacity`
+> 4. **Effets visuels et graphiques** : `background`, `border`, `border-radius`, `box-shadow`, `opacity`
 > 5. **Transformations et transitions** : `transform`, `transition`, `animation`
 
 Exemple :
