@@ -30,7 +30,7 @@ Chaque bouton suit la même structure :
 
 ## Effets de boutons CSS
 
-<video src="./assets/ma-video.mov" width="100%" controls="controls"></video>
+<video src="./assets/buttonsEffects.mov" width="100%" controls="controls"></video>
 
 ---
 
