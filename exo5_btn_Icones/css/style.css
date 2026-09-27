@@ -121,8 +121,8 @@ a {
 /* La pseudo-classe :hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer. */
 
 .btn:hover {
-  /* 4. Effets visuels et graphiques  -------------- */
   color: var(--btn-color-hover);
+  /* 4. Effets visuels et graphiques  -------------- */
   background-color: var(--btn-bg-hover);
   /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 4px sur l'axe des abcisses et de 4px sur l'axe des ordonnées */
   /* ➩ Utiliser une variable css ainsi que la fonction calc() pour effectuer des opérations de calcul (Attention aux espaces) */
