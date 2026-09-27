@@ -82,8 +82,8 @@ a {
   --fs: var(--fs-normal);
   /* Graisse de la font */
   --fw: var(--fw-bold);
-  /* Valeur du border radius */
-  --br: var(--rounded);
+  /* Valeur du border radius par defaut */
+  --br: 0;
 
   /* 2 - Display & Box Model -------------------- */
   /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
