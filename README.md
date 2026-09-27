@@ -39,14 +39,12 @@ https://github.com/user-attachments/assets/1f02f7da-76ff-4378-ac01-2646102a1c86
 
 ## Vue d'ensemble
 
-```
-Ombres & couleurs          Dégradés animés          Pseudo-éléments & animations
-──────────────────        ──────────────────        ──────────────────────────────
-1. Neon                4. Duotone             7. Sticker
-2. Neumorphism         5. Liquid              8. Terminal
-3. Press               6. Glass             9. Latéral
-                                                     10. Ink
-```
+| Ombres & couleurs     |     Dégradés animés     |     Pseudo-éléments & animations |
+| ──────────────────    |    ──────────────────   |     ──────────────────────────── |
+| 1. Neon               |  4. Duotone             | 7. Sticker  |
+| 2. Neumorphism        | 5. Liquid               | 8. Terminal |
+| 3. Press              | 6. Glass                | 9. Latéral |
+|                       |                           |   10. Ink |
 
 ---
 
