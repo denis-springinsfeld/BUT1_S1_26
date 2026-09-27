@@ -30,7 +30,10 @@ Chaque bouton suit la même structure :
 
 ## Effets de boutons CSS
 
-<video src="./assets/buttonsEffects.mov" width="100%" controls="controls"></video>
+
+
+https://github.com/user-attachments/assets/1f02f7da-76ff-4378-ac01-2646102a1c86
+
 
 ---
 
