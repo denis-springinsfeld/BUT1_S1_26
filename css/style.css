@@ -1,0 +1,664 @@
+/* ---------------------------------------------------------------------
+  1. Importation d'une police de caratère depuis https://fonts.google.com/
+------------------------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ---------------------------------------------------------------------
+  2. Variables CSS
+------------------------------------------------------------------------ */
+
+:root {
+  --clr-white: rgb(250, 250, 250);
+  --clr-black: rgb(23, 23, 23);
+  --clr-gray: rgb(113, 113, 122);
+
+  --clr-default: #404040;
+  --clr-primary: #1489ff;
+  --clr-success: #00ce0d;
+  --clr-warning: #f1da19;
+  --clr-danger: #ff2323;
+
+  --ff-sans: "Roboto", sans-serif;
+  --fw-bold: 700;
+
+  --fs-small: 1rem;
+  --fs-normal: 1.5rem;
+  --fs-large: 2rem;
+
+  --shadow: 8px;
+  --rounded: 2rem;
+}
+
+/* ---------------------------------------------------------------------
+  3. RESET CSS
+------------------------------------------------------------------------ */
+*,
+*::after,
+*::before {
+  /* ➩ Cette propriété CSS définit la façon dont la hauteur et la largeur totale d'un élément est calculée. Ici le navigateur prendre en compte la bordure et le remplissage dans la valeur définie pour la largeur et la hauteur. */
+  box-sizing: border-box;
+  /* ➩ Supprime les marges et le remplissage par défaut de tous les éléments. */
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------------
+  4. STYLES DE BASE
+------------------------------------------------------------------------ */
+
+body {
+  /* ➩ Utilisation de la font 'Roboto' ou d'une fonte sans empattement avec une variable css*/
+  font-family: var(--ff-sans);
+}
+
+a {
+  /* ➩ Supprime la décoration des liens (soulignement) */
+  text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------
+  5. COMPOSANTS
+------------------------------------------------------------------------ */
+
+/* --- Composant Bouton ----------------------------------------------- */
+
+.btn {
+  /* 0. Variables locales du composant */
+  /* Couleurs du texte */
+  --btn-text: var(--clr-black);
+  /* Couleurs de l'arrière-plan */
+  --btn-bg: var(--clr-white);
+  /* Couleurs du texte au survol */
+  --btn-text-hover: var(--btn-bg);
+  /* Couleurs de l'arrière-plan au survol */
+  --btn-bg-hover: var(--btn-text);
+
+  /* Couleurs de la bordure */
+  --btn-border: var(--btn-text);
+  /* Couleurs de l'ombre */
+  --btn-shadow: var(--clr-gray);
+
+  /* taille de la font */
+  --fs: var(--fs-normal);
+  /* Graisse de la font */
+  --fw: var(--fw-bold);
+  /* Valeur du border radius */
+  --br: 0;
+
+  /* 2 - Display & Box Model -------------------- */
+  /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
+  display: inline-block;
+
+  /* ➩ Largeur minimum du bouton : 10 caractères (unité ch) */
+  min-width: 10ch;
+  /*  ➩ Hauteur minimum 44px */
+  min-height: 2.75rem;
+
+  /* ➩ Marge interne de 8px en haut/bas et 12px à droite/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
+  padding: 0.5em 0.75em;
+  /* ➩ Marge externe de  8px en haut/droite/bas/gauche. ⚠️ utiliser des unités relative à la taille de la police de caractère de l'élément.*/
+  margin: 0.5em;
+
+  /* 3 - Typography ------------------------------ */
+  /* ➩ Taille de la font 20px. ⚠️ utiliser des unités relative à la taille de la police de l'élément racine. */
+  /* ➩ Utilisation d'une variable css*/
+  font-size: var(--fs);
+  /* ➩ Graisse utilisée pour le texte : bold */
+  /* ➩ Utilisation d'une variable css*/
+  font-weight: var(--fw);
+  /* ➩ Première lettre en capitale */
+  text-transform: capitalize;
+  /* ➩ Alignement du texte centré dans l'élément */
+  text-align: center;
+  /* ➩ Couleur du texte noir */
+  /* ➩ Utilisation d'une variable css*/
+  color: var(--btn-text);
+
+  /* 4 - Viusel & Graphique ----------------------- */
+  /* ➩ Couleur de l'arrière plan : blanc  */
+  /* ➩ Utilisation d'une variable css*/
+  background-color: var(--btn-bg);
+  /* ➩ Utilisation d'une variable css pour la couleur uniquement */
+  /* ➩ Bordure de 3px de largeur, solid et noir */
+  border: solid 3px var(--btn-border);
+
+  /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 8px sur l'axe des abcisses et de 8px sur l'axe des ordonnées */
+  /* ➩ Utilisation d'une variable css*/
+  box-shadow: 8px 8px 0 var(--btn-shadow);
+
+  /* ➩ Valeur du border radius */
+  border-radius: var(--br, 0);
+
+  /* 5 - Transitions & Transformations --------------*/
+  /* ➩ Transition sur toutes les propriétés de 3ms avec une accélération ease-in-out.
+  Elle permet de définir la transition entre deux états d'un élément.*/
+  transition: all 0.3s ease-in-out;
+}
+
+/* La pseudo-classe :hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer. */
+
+.btn:hover {
+  /* 3. Font -------------- */
+  color: var(--btn-text-hover);
+  /* 4. Effets visuels et graphiques  -------------- */
+  background-color: var(--btn-bg-hover);
+
+  /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 4px sur l'axe des abcisses et de 4px sur l'axe des ordonnées */
+  /* ➩ Utiliser une variable css ainsi que la fonction calc() pour effectuer des opérations de calcul (Attention aux espaces) */
+  box-shadow: calc(var(--shadow) / 2) calc(var(--shadow) / 2) 0
+    var(--btn-shadow);
+}
+
+/* La pseudo-classe :active permet de spécifier l'apparence d'un élément au moment où l'utilisateur l'active (par exemple, en cliquant sur un bouton). */
+
+.btn:active {
+  /* 4. Effets visuels et graphiques  -------------- */
+  /* ➩ Propriété permetant de modifier la taille d'un élément avec un facteur d'échelle sur deux dimensions : .95  */
+  transform: scale(0.95);
+  /* scale: .95; */
+}
+
+/* - BEM--Modifier -- */
+
+/* Style primary (--modifier) */
+
+.btn--primary {
+  --btn-text: var(--clr-primary);
+}
+
+/* Effets Buttons PLUS ----------------------------- */
+
+/* ------------------------------------- */
+/* 1. Effets Neon                        */
+/* ------------------------------------- */
+
+/* Pour reproduire l'effet Néon, il faut utiliser plusieurs ombres portées box-shadow et text-shadow */
+
+/* Définition de la couleur de fond en noir si la section contient un bouton avec la classe .btn--neon */
+section:has(.btn--neon) {
+  /* ➩ Définition de la couleur de fond en noir */
+}
+
+.btn--neon {
+  /* ➩ Couleur du texte #ff2bd6 */
+
+  /* ➩ Ombre portée du texte 0 décallage x et y blur 8px de couleur #ff2bd6 */
+
+  /* ➩ Couleur de fond transparente */
+
+  /* ➩ Bordure de 2px de couleur #ff2bd6 */
+
+  /* ➩ Bordure arrondie de 8px */
+
+  /* ➩ Ombres portées:
+  - il est possible de créer plusieurs ombres portées, elles sont séparées par une virgule
+  - il est possible de créer des ombres portées intérieures (inset) et extérieures */
+
+  /* ➩ Transition de 0.25s avec une animation ease */
+}
+
+.btn--neon:hover {
+  /* ➩ Couleur du texte #ff2bd6 */
+
+  /* ➩ Couleur de fond avec 10% d'opacité */
+
+  /* ➩ Ombres portées augmentées */
+}
+
+.btn--neon:active {
+}
+
+/* ------------------------------------- */
+/* 2. Effet Neumorphism                  */
+/* ------------------------------------- */
+
+/* La technique du Neumorphism vise à imiter l'aspect de surface d'un objet en plastique moulé.
+
+La couleur du bouton sera la même que la couleur de fond de la page.
+
+Pour créer l'effet d'ombre, on applique deux ombres portées :
+  - une ombre portée positive (à droite et en bas) d'une couleur un peu plus claire que la couleur de fond
+  - une ombre portée négative (à gauche et en haut) d'une couleur un peu plus foncée que la couleur de fond
+
+Les deux ombres portées doivent avoir le même décalage x et y et le même radius blur (blur 16px).
+
+  */
+
+section:has(.btn--soft) {
+  /* ➩ Définition de la couleur de fond de la section #e6e7ee */
+}
+.btn--soft {
+  /* ➩ Marge interne  */
+
+  /* ➩ Couleur du texte #404040*/
+
+  /* ➩ Couleur de fond #e6e7ee */
+
+  /* ➩ Bordure arrondie de 16px */
+
+  /* ➩ Pas de bordure */
+
+  /* ➩ Ombres portées :
+  - 8px 8px 16px #c3c4cc : ombre portée positive de 8px sur l'axe des x et y et un radius blur de 16px de couleur #c3c4cc
+  - -8px -8px 16px #ffffff : ombre portée négative de 8px sur l'axe des x et y et un radius blur de 16px de couleur #ffffff */
+
+  /* ➩ Transition de 0.2s avec une animation ease */
+}
+.btn--soft:hover {
+  /* ➩ Couleur du texte #1489ff */
+
+  /* ➩ Couleur de fond #e6e7ee */
+
+  /* ➩ Ombres portées : */
+}
+.btn--soft:active {
+}
+
+/* ------------------------------------- */
+/* 3. Effet 3D (press)                   */
+/* ------------------------------------- */
+
+section:has(.btn--press) {
+  /* ➩ Définition de la couleur de fond de la section #1d3557 */
+}
+.btn--press {
+  /* ➩ Marge interne  */
+
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Couleur de fond #e63946*/
+
+  /* ➩ Ombre portée positive de 8px sur l'axe des x et y et un radius blur de 16px de couleur #9c1c27 */
+
+  /* ➩ Pas de bordure */
+
+  /* ➩ Bordure arrondie de 12px */
+
+  /* ➩ Transition de 0.12s avec une animation ease */
+}
+
+.btn--press:hover {
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Couleur de fond #e63946*/
+
+  /* ➩ Ombre portée positive de 8px sur l'axe des x et y et un radius blur de 16px de couleur #9c1c27 */
+  /* ➩ On augmente de 5%  l'éclat du bouton regarder la propriété filter*/
+}
+
+.btn--press:active {
+  /* ➩ On supprime l'ombre portée */
+
+  /* ➩ On deplace le bouton vers le bas de 8px */
+}
+
+/* ------------------------------------- */
+/* 4. Effet Duotone glissant             */
+/* ------------------------------------- */
+
+section:has(.btn--duo) {
+  /* ➩ Définition de la couleur de fond de la section #1a1a1a */
+}
+
+.btn--duo {
+  /* ➩ Marge interne  */
+
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Font-weight */
+
+  /* ➩ Pas de bordure */
+
+  /* ➩ Bordure arrondie de 8px */
+
+  /* ➩ Définition du dégradé linéaire avec 50% pour chaque couleur #ff2323 et #1489ff   */
+
+  /* ➩ Taille du dégradé */
+
+  /* ➩ Position initiale du dégradé */
+
+  /* ➩ Pas d'ombre portée */
+
+  /* ➩ Transition de 0.35s avec une animation ease pour la position de l'arrière-plan et 0.2s pour la transformation */
+}
+
+.btn--duo:hover {
+  /* ➩ Déplacement de l'arrière-plan vers la droite */
+
+  /* ➩ Pas d'ombre */
+}
+
+.btn--duo:active {
+  /* ➩ On réduit le bouton de 4% */
+}
+
+/* ------------------------------------- */
+/* 5. Effet Liquid                       */
+/* ------------------------------------- */
+
+/*  Pour obtenir cet effet, il suffit d'appliquer un dégradé linear sur le background du bouton
+  avec les couleurs désirées, de définir la propriété background-size à 400% 100% et de définir la propriété background-position à 0% 0%.
+
+  Lors du survol du bouton (hover), il suffit de définir la propriété background-position à 100% 0% pour obtenir l'effet de déplacement du dégradé.  */
+
+section:has(.btn--liquid) {
+  /* ➩ Définition de la couleur de fond en noir #161629 */
+}
+.btn--liquid {
+  /* ➩ Définition du padding .85em 1.8em */
+
+  /* ➩ Couleur de texte blanc */
+
+  /* ➩ Définition du dégradé linéaire
+    270deg,
+    #1489ff,
+    #00ce0d,
+    #f1da19,
+    #ff2323,
+    #1489ff */
+
+  /* ➩ On peut définir la taille du dégradé et la position des dégradés et des images d'arrière plan en général avec les propriétés background-size et background-position  */
+
+  /* ➩ Pas de bordure */
+
+  /* ➩ Valeur du border radius */
+
+  /* ➩ Pas d'ombre portée */
+
+  /* ➩ Transition de 0.6s avec une animation ease pour la position de l'arrière-plan  */
+}
+
+.btn--liquid:hover {
+  /* ➩ Définition de la position de l'arrière-plan */
+  /* ➩ Déplacement de l'arrière-plan vers la droite */
+
+  /* ➩ Pas d'ombre portée */
+}
+
+.btn--liquid:active {
+  /* ➩ Retour au positionnement y initial et scale .97  */
+}
+
+/* ------------------------------------- */
+/* 6. Effets de glassmorphism            */
+/* ------------------------------------- */
+
+/*  Pour reproduire l'effet glassmorphism, il faut utiliser plusieurs propriétés CSS :
+  - backdrop-filter: blur(10px); pour flouter l'arrière-plan de l'élément
+  - rgba(255, 255, 255, 0.16); pour définir une couleur de fond avec une certaine opacité
+  - border: solid 1px rgba(255, 255, 255, 0.45); pour définir une bordure avec une certaine opacité
+  - box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18); pour définir une ombre portée avec une certaine opacité
+
+  */
+
+/* :has() est une pseudo-classe CSS.
+Elle permet de sélectionner un élément parent qui contient un élément enfant spécifique. Ici, on sélectionne la section qui contient un bouton avec la classe .btn--glass et on lui applique un style.   */
+section:has(.btn--glass) {
+  /* ➩ Définition de la dégradé de fond regarder linear-gradient()
+  * 135deg = angle du dégradé
+  * #4facfe = couleur de début
+  * #8e6dea 60% = couleur de fin avec un arrêt à 60%
+  * #f093fb = couleur de fin avec un arrêt à 60% (voir les stop en %)
+  */
+}
+
+.btn--glass {
+  /* ➩ Couleur du texte blanc */
+
+  /* ➩ Définition de la couleur de fond blanc avec 16% d'opacité */
+
+  /* ➩ Définition de l'arrondi 16px */
+
+  /* ➩ Définition de la bordure 1px blanc avec 45% d'opacité */
+
+  /* ➩ Ombre portée de couleur noir (18% d'opacité) décalage de 0px sur l'axe des abcisses et de 8px sur l'axe des ordonnées blur 24px */
+
+  /* ➩ Effet de flou sur le fond blur 10px - regarder la propriété backdrop-filter */
+
+  /* ➩ Transition de 0.25s avec une animation ease */
+}
+.btn--glass:hover {
+  /* ➩ Couleur du texte blanc */
+
+  /* ➩ Définition de la couleur de fond blanc avec 30% d'opacité */
+
+  /* ➩ Ombre portée de couleur noir (30% d'opacité) décalage de 0px sur l'axe des abcisses et de 4px sur l'axe des ordonnées blur 12px */
+
+  /* ➩ Transformation pour déplacer le bouton vers le haut */
+}
+.btn--glass:active {
+  /* ➩ Retour au positionnement initial et réduction de la taille */
+}
+
+/* ------------------------------------- */
+/* 7. Effet Autocollant                  */
+/* ------------------------------------- */
+
+section:has(.btn--sticker) {
+  /* ➩ Définition de la couleur de fond de la section en dégradé linéaire de #fceabb à #f8b500 */
+}
+.btn--sticker {
+  /* ➩ Marge interne  */
+
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Poid de la police */
+
+  /* ➩ Couleur de fond #ff5d8f */
+
+  /* ➩ Bordure arrondie de 999px (forme de pilule) */
+
+  /* ➩ Pas de bordure */
+
+  /* ➩  L'ombre portée est ici utilisée pour simuler l'épaisseur du sticker et l'ombre portée de 6px 8px  */
+
+  /* ➩ Rotation de -3 degrés */
+
+  /* ➩ Transition de 0.2s avec une animation ease */
+}
+
+.btn--sticker:hover {
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Couleur de fond #ff5d8f */
+
+  /* ➩ Pas de bordure */
+
+  /* ➩  L'ombre portée est ici utilisée pour simuler l'épaisseur du sticker et l'ombre portée de 6px 8px  */
+
+  /* ➩ Rotation de 0 degrés et on augmente de 4% la taille du bouton */
+}
+
+.btn--sticker:active {
+  /* ➩ Rotation de -1 degrés et on réduit de 3% la taille du bouton */
+}
+
+/* ------------------------------------- */
+/* 8. Effet Terminal CRT                 */
+/* ------------------------------------- */
+
+section:has(.btn--terminal) {
+  /* ➩ Définition de la couleur de fond de la section en dégradé linéaire de #04120a à #0a1f12 */
+}
+
+.btn--terminal {
+  /* ➩ Marge interne  */
+
+  /* ➩ Police d'écriture de type monospace */
+
+  /* ➩ Couleur du texte #39ff88*/
+
+  /* ➩ Bordure de 1px de couleur #39ff88*/
+
+  /* ➩ Couleur de fond #04120a*/
+
+  /* ➩ Ombre portée sur le texte */
+
+  /* ➩ Ombre portée interne */
+
+  /* ➩ Transition de 0.2s avec un effet ease */
+}
+
+/* ➩ Ajout du caractère _ après le texte avec un pseudo élément */
+.btn--terminal::after {
+  /* ➩ Ajout du caractère _ après le texte */
+
+  /* ➩ Marge externe sur la gauche de .3em */
+
+  /* ➩ Animation de clignotement */
+}
+/* ➩ Définition de l'animation clignotement */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn--terminal:hover {
+  /* ➩ Couleur de fond rgba(57, 255, 136, 0.08)*/
+
+  /* ➩ Ombre portée interne et externe : rgba(57, 255, 136, 0.451) */
+}
+
+.btn--terminal:active {
+  /* ➩ Réduction du bouton  */
+}
+
+/* ------------------------------------- */
+/* 9. Effet Remplissage latéral          */
+/* ------------------------------------- */
+
+section:has(.btn--lateral) {
+  /* ➩ Couleur de fond */
+}
+.btn--lateral {
+  /* ➩ Devient le référent de position */
+
+  /* ➩ Cache le contenu qui dépasse */
+
+  /* ➩ Indice de superposition */
+
+  /* ➩ Marge interne  */
+
+  /* ➩ Bordure de 2px de couleur #17171a */
+
+  /* ➩ Couleur du texte #17171a*/
+
+  /* ➩ Couleur de fond transparente */
+
+  /* ➩ Graisse de la police */
+
+  /* ➩ Bordure arrondie de 6px */
+
+  /* ➩ Transition de 0.35s pour la couleur du texte avec un délai de 0.1s */
+}
+
+.btn--lateral::before {
+  /* ➩ Ajout un contenu */
+
+  /* ➩ Position absolue */
+
+  /* ➩ Positionnement en haut */
+
+  /* ➩ Positionnement à gauche */
+
+  /* ➩ Largeur du pseudo-élément */
+
+  /* ➩ Hauteur du pseudo-élément */
+
+  /* ➩ Couleur du fond */
+
+  /* ➩ Transition de 0.5s pour la largeur */
+
+  /* ➩ Indice de superposition */
+}
+
+.btn--lateral:hover {
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Couleur de fond */
+}
+
+.btn--lateral:hover::before {
+  /* ➩ Largeur du pseudo-élément */
+}
+
+.btn--lateral:active {
+  /* ➩ Réduction du bouton  */
+}
+
+/* ------------------------------------- */
+/* 10. Effet Encre circulaire            */
+/* ------------------------------------- */
+
+section:has(.btn--ink) {
+  /* ➩ Définition de la couleur de fond #f5f0e6  */
+}
+
+.btn--ink {
+  /* ➩ Devient le référent de position pour son pseudo-élément ::before */
+
+  /* ➩ Cache le contenu qui dépasse voir overflow */
+
+  /* ➩ Indice de superposition */
+
+  /* ➩ Marge interne  */
+
+  /* ➩ Couleur du texte #17171a*/
+
+  /* ➩ Graisse de la police */
+
+  /* ➩ Couleur de fond transparente */
+
+  /* ➩ Bordure de 2px de couleur #17171a */
+
+  /* ➩ Bordure arrondie de 6px */
+
+  /* ➩ Transition de 0.35s pour la couleur du texte avec un délai de 0.1s */
+}
+
+.btn--ink::before {
+  /* ➩ Ajout un contenu */
+
+  /* ➩ Position absolue */
+
+  /* ➩ Positionnement au centre */
+
+  /* ➩ Dimensions initiales */
+
+  /* ➩ Ratio 1/1 */
+
+  /* ➩ Couleur du fond */
+
+  /* ➩ Forme arrondie */
+
+  /* ➩ Transformation décalage pour centrer */
+
+  /* ➩ Opacité initiale */
+
+  /* ➩ Transition de 0.5s pour la largeur avec un délai de 0.4s */
+
+  /* ➩ Indice de superposition */
+}
+
+.btn--ink:hover {
+  /* ➩ Couleur du texte #fff*/
+
+  /* ➩ Couleur de fond */
+}
+
+.btn--ink:hover::before {
+  /* ➩ Opacité maximale */
+
+  /* ➩ Largeur du pseudo-élément */
+}
+
+.btn--ink:active {
+  /* ➩ Réduction du bouton  */
+}
