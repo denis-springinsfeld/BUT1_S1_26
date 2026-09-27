@@ -64,13 +64,26 @@ a {
 
 .btn {
   /* 0. Variables locales du composant */
-  --btn-bg: var(--clr-white);
+  /* Couleurs du texte */
   --btn-text: var(--clr-black);
+  /* Couleurs de l'arrière-plan */
+  --btn-bg: var(--clr-white);
+  /* Couleurs du texte au survol */
+  --btn-text-hover: var(--clr-white);
+  /* Couleurs de l'arrière-plan au survol */
+  --btn-bg-hover: var(--clr-black);
+
+  /* Couleurs de la bordure */
   --btn-border: var(--clr-black);
+  /* Couleurs de l'ombre */
   --btn-shadow: var(--clr-gray);
 
+  /* taille de la font */
   --fs: var(--fs-normal);
+  /* Graisse de la font */
   --fw: var(--fw-bold);
+  /* Valeur du border radius */
+  --br: var(--rounded);
 
   /* 2 - Display & Box Model -------------------- */
   /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
@@ -113,6 +126,9 @@ a {
   /* ➩ Utilisation d'une variable css*/
   box-shadow: 8px 8px 0 var(--btn-shadow);
 
+  /* ➩ Valeur du border radius */
+  border-radius: var(--br, 0);
+
   /* 5 - Transitions & Transformations --------------*/
   /* ➩ Transition sur toutes les propriétés de 3ms avec une accélération ease-in-out.
   Elle permet de définir la transition entre deux états d'un élément.*/
@@ -123,9 +139,9 @@ a {
 
 .btn:hover {
   /* 3. Font -------------- */
-  color: var(--btn-bg);
+  color: var(--btn-text-hover);
   /* 4. Effets visuels et graphiques  -------------- */
-  background-color: var(--btn-text);
+  background-color: var(--btn-bg-hover);
 
   /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 4px sur l'axe des abcisses et de 4px sur l'axe des ordonnées */
   /* ➩ Utiliser une variable css ainsi que la fonction calc() pour effectuer des opérations de calcul (Attention aux espaces) */
