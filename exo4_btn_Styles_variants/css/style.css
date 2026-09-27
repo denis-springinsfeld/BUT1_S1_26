@@ -68,9 +68,8 @@ a {
   --btn-text: var(--clr-black);
   --btn-border: var(--clr-black);
   --btn-shadow: var(--clr-gray);
-
-  --fs: var(--fs-normal);
-  --fw: var(--fw-bold);
+  --btn-color-hover: var(--clr-black);
+  --btn-bg-hover: var(--clr-white);
 
   /* 2 - Display & Box Model -------------------- */
   /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
@@ -89,10 +88,10 @@ a {
   /* 3 - Typography ------------------------------ */
   /* ➩ Taille de la font 20px. ⚠️ utiliser des unités relative à la taille de la police de l'élément racine. */
   /* ➩ Utilisation d'une variable css*/
-  font-size: var(--fs);
+  font-size: var(--fs-normal);
   /* ➩ Graisse utilisée pour le texte : bold */
   /* ➩ Utilisation d'une variable css*/
-  font-weight: var(--fw);
+  font-weight: var(--fw-bold);
   /* ➩ Première lettre en capitale */
   text-transform: capitalize;
   /* ➩ Alignement du texte centré dans l'élément */
