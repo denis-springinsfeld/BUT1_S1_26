@@ -64,12 +64,12 @@ a {
 
 .btn {
   /* 0. Variables locales du composant */
-  --btn-bg: var(--clr-white);
   --btn-text: var(--clr-black);
+  --btn-bg: var(--clr-white);
   --btn-border: var(--clr-black);
   --btn-shadow: var(--clr-gray);
-  --btn-color-hover: var(--clr-black);
-  --btn-bg-hover: var(--clr-white);
+  --btn-text-hover: var(--clr-white);
+  --btn-bg-hover: var(--clr-black);
 
   /* 2 - Display & Box Model -------------------- */
   /* ➩ Le lien reste dans le flux en ligne tout en acceptant les dimensions d'une boîte */
@@ -121,7 +121,7 @@ a {
 /* La pseudo-classe :hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur le survole avec le pointeur, sans nécessairement l'activer. */
 
 .btn:hover {
-  color: var(--btn-color-hover);
+  color: var(--btn-text-hover);
   /* 4. Effets visuels et graphiques  -------------- */
   background-color: var(--btn-bg-hover);
   /* ➩ Ombre portée de couleur noir (50% d'opacité) décalage de 4px sur l'axe des abcisses et de 4px sur l'axe des ordonnées */
@@ -189,7 +189,7 @@ diminuer la taille de la police --- */
   --btn-bg: var(--clr-white);
   --btn-border: var(--clr-primary);
   --btn-shadow: var(--clr-primary);
-  --btn-color-hover: var(--clr-white);
+  --btn-text-hover: var(--clr-white);
   --btn-bg-hover: var(--clr-primary);
 }
 
@@ -200,7 +200,7 @@ diminuer la taille de la police --- */
   --btn-bg: var(--clr-white);
   --btn-border: var(--clr-success);
   --btn-shadow: var(--clr-success);
-  --btn-color-hover: var(--clr-white);
+  --btn-text-hover: var(--clr-white);
   --btn-bg-hover: var(--clr-success);
 }
 
@@ -211,7 +211,7 @@ diminuer la taille de la police --- */
   --btn-bg: var(--clr-white);
   --btn-border: var(--clr-warning);
   --btn-shadow: var(--clr-warning);
-  --btn-color-hover: var(--clr-white);
+  --btn-text-hover: var(--clr-white);
   --btn-bg-hover: var(--clr-warning);
 }
 
@@ -222,6 +222,6 @@ diminuer la taille de la police --- */
   --btn-bg: var(--clr-white);
   --btn-border: var(--clr-danger);
   --btn-shadow: var(--clr-danger);
-  --btn-color-hover: var(--clr-white);
+  --btn-text-hover: var(--clr-white);
   --btn-bg-hover: var(--clr-danger);
 }
