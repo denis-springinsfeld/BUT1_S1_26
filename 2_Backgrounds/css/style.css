@@ -1,0 +1,187 @@
+/* -- Root ------ */
+:root {
+  --ink: hsl(212, 55%, 20%);
+  --muted: hsl(212, 18%, 42%);
+  --primary: hsl(178, 62%, 30%);
+  --paper: hsl(210, 36%, 95%);
+  --line: hsl(210, 18%, 85%);
+  --accent: hsl(39, 87%, 62%);
+  --ff-sans: "Roboto", sans-serif;
+}
+
+/* -- Reset ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* -- Style de base ------- */
+body {
+  margin: 0;
+  padding: 0 1.25em 2em;
+  font-family: var(--ff-sans);
+  color: var(--ink);
+  line-height: 1.65;
+  background-color: var(--paper);
+}
+
+.demo {
+  /* Variables locales au bloc .demo — accessibles par tous les .demo--* */
+  --demo-photo: url("https://picsum.photos/id/1018/1200/800");
+  --demo-pattern: radial-gradient(circle, var(--accent) 0 5px, transparent 6px);
+  /* Hauteur des démos : modifiable au cas par cas */
+  --demo-h: 14rem;
+  min-height: var(--demo-h);
+  /* Débordement masqué */
+  overflow: hidden;
+  /* Bordure arrondie */
+  border-radius: 9px;
+}
+
+/* -- 01. Background Image -----------  */
+/* Cette propriété permet de définir une image comme arrière-plan */
+/* url() | gradient | none */
+/* La valeur par défaut est none */
+
+.demo--image {
+  --demo-h: 24rem;
+  /* Couleur d'arrière-plan de secours */
+  background-color: var(--primary);
+  /* Position de l'arrière-plan */
+  background-position: center;
+  /* Taille de l'arrière-plan */
+  background-size: cover;
+
+  /* ➡️ Testez différentes valeurs pour background-image */
+}
+
+/* -- 02. Background Size -----------  */
+/* Cette propriété permet de définir la taille de l'arrière-plan */
+/* auto | length | percentage | cover | contain */
+/* La valeur par défaut est auto */
+
+.demo--size {
+  /* Couleur d'arrière-plan de secours */
+  background-color: var(--paper);
+  /* Image d'arrière-plan */
+  background-image: var(--demo-photo);
+  /* Sans répétition, contain laisse apparaître des bandes vides */
+  background-repeat: no-repeat;
+
+  /* ➡️ Testez les différentes tailles en pixels ou en pourcentage */
+  /* Première valeur : largeur, deuxième valeur : hauteur */
+}
+
+/* -- 03. Background Repeat -----------  */
+/* Cette propriété permet de définir la répétition de l'arrière-plan */
+/* no-repeat | repeat* | repeat-x | repeat-y | space | round */
+/* Deux valeurs possibles : horizontal puis vertical (ex. space repeat) */
+
+.demo--repeat {
+  /* Couleur d'arrière-plan de secours */
+  background-color: var(--paper);
+  /* Image d'arrière-plan */
+  /* background-image: var(--demo-pattern); */
+  background-image: var(--demo-photo);
+  /* Taille de l'image d'arrière-plan (ratio 3:2 de la photo conservé) */
+  background-size: 120px 80px;
+
+  /* ➡️ Testez les différentes valeurs de répétition */
+}
+
+/* -- 04. Background Position -----------  */
+/* Cette propriété permet de définir la position de l'arrière-plan */
+/* left | center | right | top | bottom | length | percentage */
+/* Par défaut, la valeur est 0% 0% (left top) */
+
+.demo--position {
+  /* Couleur de secours */
+  background-color: var(--paper);
+  /* Image d'arrière-plan */
+  background-image: var(--demo-photo);
+  /* Répétition de l'arrière-plan */
+  background-repeat: no-repeat;
+  /* Image plus petite que la boîte : la position devient visible */
+  background-size: 240px 160px;
+
+  /* ➡️ Testez les différentes valeurs de position */
+}
+
+/* -- 05. Background Attachment ------------- */
+/* Cette propriété permet de définir le comportement de l'arrière-plan lors du défilement */
+/* scroll* | fixed | local */
+/* La valeur par défaut est scroll */
+
+.demo--attachment {
+  /* Hauteur de la boite */
+  height: 20rem;
+  /* Boîte à défilement interne : indispensable pour observer « local » */
+  overflow: auto;
+  /* Marge interne */
+  padding: 3.5em 1em 1em;
+  /* Couleur du texte */
+  color: var(--line);
+  /* Couleur de l'arrière-plan */
+  background-color: var(--paper);
+  /* Image d'arrière-plan */
+  background-image:
+    linear-gradient(rgb(23 49 79 / 38%), rgb(23 49 79 / 38%)), var(--demo-photo);
+  /* Position de l'arrière-plan */
+  background-position: center;
+  /* Taille de l'arrière-plan */
+  background-size: cover;
+
+  /* ➡️ Testez les différentes valeurs de background-attachment */
+  /* Faites défiler la boîte, puis la page */
+}
+
+/* -- 06. Background Origin ------------------------------- */
+/* Cette propriété permet de définir l'origine de l'arrière-plan */
+/* padding-box* | border-box | content-box */
+/* Par défaut, la valeur est padding-box */
+
+.demo--origin {
+  /* Marge interne */
+  padding: 3em;
+  /* Couleur de l'arrière-plan */
+  background-color: var(--ink);
+  /* Image d'arrière-plan */
+  background-image: var(--demo-photo);
+  /* Répétition de l'arrière-plan */
+  background-repeat: no-repeat;
+  /* Taille de l'arrière-plan */
+  background-size: 90px 60px;
+  /* Bordure */
+  border: 20px dashed var(--muted);
+
+  /* ➡️ Testez les différentes valeurs d'origine */
+}
+
+/* -- 07. Background Clip ------------------------------- */
+/* Cette propriété permet de définir la zone peinte pour l'arrière-plan */
+/* border-box* | padding-box | content-box */
+/* Par défaut, la valeur est border-box */
+
+.demo--clip {
+  /* Marge interne */
+  padding: 2em;
+  /* Fond sombre : les points du motif (accent) restent visibles */
+  background-color: var(--ink);
+  /* Image d'arrière-plan */
+  background-image: var(--demo-pattern);
+  /* Taille de l'arrière-plan */
+  background-size: 20px 20px;
+  /* Bordure */
+  border: 12px dashed var(--muted);
+  /* ➡️ Testez les différentes valeurs de background-clip */
+}
+
+/* -- 08. Background Shorthand -----------  */
+/* La propriété raccourcie combine position, taille, image, etc. en une déclaration */
+/* Attention : elle réinitialise les sous-propriétés non mentionnées */
+
+.demo--shorthand {
+  --demo-h: 24rem;
+  /* ➡️ Équivalent de .demo--image : la couleur n'est écrite que dans la dernière couche */
+}

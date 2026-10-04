@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP2 CSS — Les avatars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <p class="page-header__eyebrow">TP2 · CSS images</p>
+      <h1 class="page-header__title">Les avatars</h1>
+      <p class="page-header__intro">
+        Observez chaque exemple, puis modifiez la règle indiquée dans
+        <code class="page-header__code">css/style.css</code> pour construire
+        votre collection d’avatars étape par étape.
+      </p>
+    </header>
+
+    <main class="lesson">
+      <!-- 01 · Balise Image -->
+      <section class="exercise">
+        <p class="exercise__number">01 · L’image</p>
+        <h2 class="exercise__title">Afficher une image</h2>
+        <p class="exercise__text">
+          La balise <code class="exercise__code">&lt;img&gt;</code> affiche une
+          image dans la page. Son attribut
+          <code class="exercise__code">alt</code> décrit l’image aux personnes
+          qui ne peuvent pas la voir.
+        </p>
+        <div class="demo">
+          <!-- Ajouter une image avec la classe .test-image -->
+          <img
+            class="test-image"
+            src="https://randomuser.me/api/portraits/lego/1.jpg"
+            alt="Visage souriant en briques"
+          />
+        </div>
+        <p class="exercise__challenge">
+          <strong>Partie HTML :</strong>
+          Testez les attributs <code class="exercise__code">src</code>,
+          <code class="exercise__code">alt</code>,
+          <code class="exercise__code">width</code> et
+          <code class="exercise__code">height</code> (valeurs sans unité,
+          interprétées en pixels par le navigateur).
+        </p>
+        <p class="exercise__challenge">
+          <strong>Partie CSS :</strong> Modifiez la largeur de l’image dans
+          <code class="exercise__code">.test-image</code> dans
+          <code class="exercise__code">css/style.css</code>.
+        </p>
+        <div class="exercise__remarque">
+          <strong>Remarque :</strong> Il est possible de modifier les
+          dimensions, le comportement des images à l’aide des propriétés CSS
+          suivantes :
+
+          <code class="exercise__code">width</code> -
+          <code class="exercise__code">height</code> -
+          <code class="exercise__code">aspect-ratio</code> -
+          <code class="exercise__code">max-width</code> -
+          <code class="exercise__code">object-fit</code> -
+          <code class="exercise__code">object-position</code> -
+          <code class="exercise__code">border-radius</code>
+        </div>
+        <div class="exercise__remarque">
+          <strong>Remarque :</strong> Vous pouvez tester les différents
+          placeholders d’images disponibles sur le web :
+
+          <ul>
+            <li>
+              <a
+                href="https://picsum.photos"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://picsum.photos</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.pexels.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.pexels.com</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://pravatar.cc"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://i.pravatar.cc/{size}</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://doodleipsum.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://doodleipsum.com</a
+              >
+            </li>
+          </ul>
+          <p>Testez les placeholders : https://picsum.photos/480/320/?random</p>
+        </div>
+      </section>
+
+      <!-- 02 · AVATAR -->
+      <section class="exercise">
+        <p class="exercise__number">
+          02 · Avatar - l'image s'adapte à son conteneur
+        </p>
+        <h2 class="exercise__title">Créer un avatar</h2>
+        <p class="exercise__text">
+          Un avatar est une image recadrée dans une forme carrée ou ronde. On
+          adapte l’image à son conteneur sans la déformer avec les propriétés
+          <code class="exercise__code">object-fit</code> et
+          <code class="exercise__code">object-position</code>.
+        </p>
+        <div class="demo">
+          <!-- COMPOSANT AVATAR -->
+          <div class="avatar">
+            <img
+              class="avatar__img"
+              src="https://randomuser.me/api/portraits/lego/5.jpg"
+              alt="Visage souriant en briques"
+            />
+          </div>
+        </div>
+
+        <div class="exercise__challenge">
+          <strong>Rappel BEM du COMPOSANT AVATAR :</strong>
+
+          <pre class="exercise__code">
+BLOCK .avatar (une simple div)
+ELEMENT
+  .avatar__img (une balise img)
+MODIFIERS
+  .avatar--small
+  .avatar--large
+  ...</pre
+          >
+        </div>
+
+        <p class="exercise__challenge">
+          <strong>À tester :</strong> Dans
+          <code class="exercise__code">.avatar</code>, changez
+          <code class="exercise__code">border-radius</code> et
+          <code class="exercise__code">aspect-ratio</code>. Dans
+          <code class="exercise__code">.avatar__img</code>, comparez
+          <code class="exercise__code">cover</code> et
+          <code class="exercise__code">contain</code>. Positionnez l’image avec
+          <code class="exercise__code">object-position</code>.
+        </p>
+        <div class="exercise__remarque">
+          <strong>Question :</strong> Comment l’image est-elle rognée en cercle
+          alors que le parent a
+          <code class="exercise__code">border-radius: 50%</code> ? Comparez deux
+          approches :
+          <ul>
+            <li>
+              <code class="exercise__code">overflow: hidden</code> sur le
+              conteneur
+              <code class="exercise__code">.avatar</code>
+            </li>
+            <li>
+              <code class="exercise__code">border-radius: inherit</code> sur
+              l’image <code class="exercise__code">.avatar__img</code>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 03 · MODIFIERS BEM · La taille -->
+      <section class="exercise">
+        <p class="exercise__number">03 · La taille</p>
+        <h2 class="exercise__title">Agrandir l’avatar</h2>
+        <p class="exercise__text">
+          Une classe modificatrice permet de changer la taille tout en gardant
+          les règles de base de l’avatar.
+        </p>
+
+        <div class="demo">
+          <!-- Avatars de taille large -->
+          <div class="avatar avatar--large">
+            <img
+              class="avatar__img"
+              src="https://randomuser.me/api/portraits/lego/5.jpg"
+              alt="Visage souriant en briques, grand avatar"
+            />
+          </div>
+        </div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Modifiez la largeur de
+          <code class="exercise__code">.avatar--large</code> dans
+          <code class="exercise__code">css/style.css</code>.
+        </p>
+      </section>
+
+      <!-- 04 · MODIFIERS BEM · La bordure -->
+      <section class="exercise">
+        <p class="exercise__number">04 · La bordure</p>
+        <h2 class="exercise__title">Ajouter une bordure</h2>
+        <p class="exercise__text">
+          Une bordure sépare visuellement l’avatar de son arrière-plan. Elle
+          s’ajoute à la taille de base sans modifier l’image.
+        </p>
+
+        <div class="demo">
+          <div class="avatar avatar--large avatar--bordered">
+            <img
+              class="avatar__img"
+              src="https://doodleipsum.com/700/avatar-5?bg=6392D9&i=3866b029457817a8d3bdd26ebba02cbc"
+              alt="Illustration de visage dans un avatar rond"
+            />
+          </div>
+        </div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Changez l’épaisseur et la couleur de la
+          bordure dans <code class="exercise__code">.avatar--bordered</code>.
+        </p>
+      </section>
+
+      <!-- 05 · MODIFIERS BEM · La forme carrée -->
+      <section class="exercise">
+        <p class="exercise__number">05 · La forme carrée</p>
+        <h2 class="exercise__title">Modifier les coins</h2>
+        <p class="exercise__text">
+          La même classe modificatrice peut transformer un avatar rond en avatar
+          carré.
+        </p>
+        <div class="demo">
+          <div class="avatar avatar--large avatar--bordered avatar--square">
+            <img
+              class="avatar__img"
+              src="https://doodleipsum.com/700/avatar?bg=6392D9&i=3b5eda98781d712fc782cd590c154647"
+              alt="Illustration de visage dans un avatar carré"
+            />
+          </div>
+        </div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Testez différentes valeurs de
+          <code class="exercise__code">border-radius</code> dans
+          <code class="exercise__code">.avatar--square</code>.
+        </p>
+      </section>
+
+      <!-- 06 · MODIFIERS BEM · Le dégradé sur la bordure -->
+
+      <section class="exercise">
+        <p class="exercise__number">06 · Le dégradé</p>
+        <h2 class="exercise__title">Créer une bordure dégradée</h2>
+        <p class="exercise__text">
+          Un arrière-plan en dégradé et une bordure transparente permettent
+          d’obtenir un contour coloré autour de l’image.
+        </p>
+        <div class="demo">
+          <div class="avatar avatar--large avatar--b-gradient">
+            <img
+              class="avatar__img"
+              src="https://i.pravatar.cc/300"
+              alt="Portrait photographique"
+            />
+          </div>
+        </div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Modifiez les couleurs et l’angle du
+          dégradé dans <code class="exercise__code">.avatar--b-gradient</code>.
+          Essayez ensuite la version carrée.
+        </p>
+      </section>
+
+      <!-- 07 · MODIFIERS BEM · Le contour double -->
+
+      <section class="exercise">
+        <p class="exercise__number">07 · Le contour double</p>
+        <h2 class="exercise__title">Ajouter un contour intérieur</h2>
+        <p class="exercise__text">
+          <code class="exercise__code">outline</code> ajoute un contour sans
+          occuper d’espace dans la boîte. Un décalage négatif le place à
+          l’intérieur de l’avatar.
+        </p>
+        <div class="demo">
+          <div class="avatar avatar--large avatar--b-gradient avatar--b-double">
+            <img
+              class="avatar__img"
+              src="https://i.pravatar.cc/301"
+              alt="Portrait avec une bordure dégradée et un contour intérieur"
+            />
+          </div>
+        </div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Changez la couleur et l’épaisseur de
+          <code class="exercise__code">outline</code>, puis comparez plusieurs
+          valeurs d’<code class="exercise__code">outline-offset</code>.
+        </p>
+      </section>
+
+      <!-- 07 bis · MODIFIERS BEM · Le contour avec ::after -->
+
+      <section class="exercise">
+        <p class="exercise__number">07 bis · Le pseudo-élément ::after</p>
+        <h2 class="exercise__title">Superposer un contour avec ::after</h2>
+        <p class="exercise__text">
+          Le pseudo-élément <code class="exercise__code">::after</code> permet
+          de créer un calque décoratif superposé à l’avatar. Grâce à
+          <code class="exercise__code">position: absolute</code> et
+          <code class="exercise__code">inset: 0</code>, il recouvre parfaitement
+          l’image sans modifier le flux HTML.
+        </p>
+        <div class="demo">
+          <div class="avatar avatar--large avatar--b-gradient avatar--b-after">
+            <img
+              class="avatar__img"
+              src="https://i.pravatar.cc/302"
+              alt="Portrait avec contour superposé via pseudo-élément ::after"
+            />
+          </div>
+        </div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Observez l’utilisation indispensable de
+          <code class="exercise__code">content: ""</code> pour afficher le
+          pseudo-élément. Modifiez les propriétés d’<code class="exercise__code"
+            >outline</code
+          >, d’<code class="exercise__code">outline-offset</code> ou ajoutez une
+          bordure dans
+          <code class="exercise__code">.avatar--b-after::after</code>.
+        </p>
+      </section>
+
+      <!-- 08 · MODIFIERS BEM · Le badge -->
+
+      <section class="exercise">
+        <p class="exercise__number">08 · Le badge</p>
+        <h2 class="exercise__title">Positionner un badge</h2>
+        <p class="exercise__text">
+          Un parent positionné sert de repère à son badge. Le badge peut
+          contenir un nombre ou une icône SVG.
+        </p>
+        <div class="demo">
+          <div class="avatar avatar--large avatar--b-gradient">
+            <img
+              class="avatar__img"
+              src="https://doodleipsum.com/700x700/avatar?bg=FF3C3C&i=6116a7c0ab60c1663e6aec880e0cd286"
+              alt="Illustration de visage avec un badge étoile"
+            />
+            <span class="avatar__badge" role="img" aria-label="Favori">
+              <svg class="avatar__icon" aria-hidden="true">
+                <use href="#star"></use>
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div class="demo">
+          <div class="avatar avatar--large avatar--b-gradient">
+            <img
+              class="avatar__img"
+              src="https://doodleipsum.com/700x700/avatar?bg=FF3C3C&i=6116a7c0ab60c1663e6aec880e0cd286"
+              alt="Illustration de visage avec un badge numéroté"
+            />
+            <span class="avatar__badge" role="img" aria-label="10 notifications"
+              >10</span
+            >
+          </div>
+        </div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Déplacez le badge avec
+          <code class="exercise__code">top</code>,
+          <code class="exercise__code">right</code>,
+          <code class="exercise__code">bottom</code> et
+          <code class="exercise__code">left</code>. Remplacez le nombre par une
+          icône.
+        </p>
+      </section>
+
+      <!-- 09 ·  BEM · La collection d'avatars -->
+
+      <section class="exercise">
+        <p class="exercise__number">09 · Collection</p>
+        <h2 class="exercise__title">Composer une collection</h2>
+        <div class="exercise__text">
+          Utilisation d’une liste non ordonnée pour afficher une collection
+          d’avatars.
+          <pre
+            class="exercise__code"
+          ><code>&lt;ul class="avatarList" role="list"&gt;
+  &lt;li class="avatarList__item"&gt;...&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+        <ul class="avatarList" role="list">
+          <li class="avatarList__item">
+            <div class="avatar avatar--large">
+              <img
+                class="avatar__img"
+                src="https://randomuser.me/api/portraits/lego/1.jpg"
+                alt="Avatar rond"
+              />
+            </div>
+          </li>
+          <li class="avatarList__item">
+            <div class="avatar avatar--large avatar--bordered">
+              <img
+                class="avatar__img"
+                src="https://doodleipsum.com/700/avatar-5?bg=6392D9&i=3866b029457817a8d3bdd26ebba02cbc"
+                alt="Avatar rond bordé"
+              />
+            </div>
+          </li>
+          <li class="avatarList__item">
+            <div class="avatar avatar--large avatar--square avatar--b-gradient">
+              <img
+                class="avatar__img"
+                src="https://doodleipsum.com/700/avatar?bg=6392D9&i=3b5eda98781d712fc782cd590c154647"
+                alt="Avatar carré avec bordure dégradée"
+              />
+            </div>
+          </li>
+          <li class="avatarList__item">
+            <div
+              class="avatar avatar--large avatar--b-gradient avatar--b-double"
+            >
+              <img
+                class="avatar__img"
+                src="https://i.pravatar.cc/300"
+                alt="Avatar avec bordures dégradée et intérieure"
+              />
+              <span
+                class="avatar__badge"
+                role="img"
+                aria-label="11 notifications"
+                >11</span
+              >
+            </div>
+          </li>
+        </ul>
+        <div class="exercise__challenge">
+          <p>
+            <strong>Défi : Suite TP2Plus</strong>
+          </p>
+          Ajoutez des avatar avec de nouvelles formes, des bordures
+          personnalisées et des badges.
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">TP2 · CSS images</footer>
+    <!-- SPRITE SVG Voir memeo -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0"
+      class="svg-sprite"
+      aria-hidden="true"
+    >
+      <symbol id="star" viewBox="0 0 32 32">
+        <path
+          d="M32 12.408l-11.056-1.607-4.944-10.018-4.944 10.018-11.056 1.607 8 7.798-1.889 11.011 9.889-5.199 9.889 5.199-1.889-11.011 8-7.798z"
+          fill="currentColor"
+        ></path>
+      </symbol>
+    </svg>
+  </body>
+</html>

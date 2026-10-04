@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TP 2 CSS — Les arrière-plans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <p class="page-header__eyebrow">TP2 · CSS backgrounds</p>
+      <h1 class="page-header__title">Les arrière-plans</h1>
+      <p class="page-header__intro">
+        Observez chaque exemple, puis modifiez la propriété indiquée dans
+        <code class="page-header__code">css/style.css</code> pour comparer son
+        effet.
+      </p>
+    </header>
+
+    <main class="lesson">
+      <!-- 01. Background Image --------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">01 · L’image</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-image</code
+          >
+        </h2>
+        <p class="exercise__text">
+          Une <strong>image</strong> ou un <strong>dégradé</strong> peut remplir
+          l’arrière-plan. Plusieurs couches se séparent par une virgule : la
+          première est dessinée au-dessus.
+        </p>
+        <!-- Espace de test -->
+        <div
+          class="demo demo--image"
+          role="img"
+          aria-label="Photo de montagne assombrie en haut par un voile noir dégradé"
+        ></div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Changez l’URL, retirez le dégradé,
+          modifiez le dégradé, ajoutez un autre dégradé, puis inversez l’ordre
+          des deux couches.
+        </p>
+        <p class="exercise__remarque">
+          <strong>Remarque :</strong> On utilise une couleur de secours si
+          l’image ne se charge pas. Ici, l’image porte du sens pour le TP : on
+          lui ajoute <code class="exercise__code">role="img"</code> et un
+          <code class="exercise__code">aria-label</code>. Une image purement
+          décorative n’en a pas besoin.
+        </p>
+      </section>
+
+      <!-- 02.Background Size --------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">02 · La taille</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-size</code
+          >
+        </h2>
+        <p class="exercise__text">
+          La propriété
+          <code class="exercise__code">background-size</code> utilise des
+          valeurs de longueur et de pourcentage CSS ou des mots-clés
+          spécifiques.
+        </p>
+        <div class="demo demo--size"></div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Testez les valeurs
+          <code class="exercise__code">cover</code>,
+          <code class="exercise__code">contain</code> et
+          <code class="exercise__code">auto</code> pour observer comment l’image
+          s’adapte à son conteneur. Vous pouvez également essayer de définir des
+          dimensions spécifiques en pixels ou en pourcentage pour voir comment
+          cela affecte l’affichage de l’image.
+        </p>
+      </section>
+
+      <!-- 03. Background Repeat ------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">03 · La répétition</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-repeat</code
+          >
+        </h2>
+        <p class="exercise__text">
+          Par défaut, une image plus petite que son conteneur se répète dans les
+          deux directions.
+        </p>
+
+        <div class="demo demo--repeat"></div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Testez les valeurs
+          <code class="exercise__code">repeat-x</code>,
+          <code class="exercise__code">repeat-y</code>,
+          <code class="exercise__code">no-repeat</code>,
+          <code class="exercise__code">space</code> et
+          <code class="exercise__code">round</code> pour observer comment
+          l’image se répète ou s’ajuste dans le conteneur. Essayez aussi la
+          syntaxe à deux valeurs (horizontal puis vertical), par exemple
+          <code class="exercise__code">space repeat</code>.
+        </p>
+      </section>
+
+      <!-- 04.Background Position ------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">04 · La position</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-position</code
+          >
+        </h2>
+        <p class="exercise__text">
+          Cette propriété place l’image dans son élément. Essayez des mots-clés,
+          des pourcentages ou des distances.
+        </p>
+        <!-- Espace de test -->
+        <div class="demo demo--position"></div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Testez différentes valeurs :
+          <code class="exercise__code">center bottom</code>,
+          <code class="exercise__code">left top</code>,
+          <code class="exercise__code">20% 70%</code>.
+        </p>
+        <p class="exercise__remarque">
+          <strong>Remarque :</strong> Attention à l’ordre des valeurs : la
+          première est pour l’axe horizontal, la deuxième pour l’axe vertical.
+        </p>
+      </section>
+
+      <!-- 05. Background Attachment ---------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">05 · Le défilement</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-attachment</code
+          >
+        </h2>
+        <p class="exercise__text">
+          Cette propriété détermine si l’arrière-plan défile avec la page, reste
+          fixé à la fenêtre ou défile avec le contenu de l’élément.
+        </p>
+        <div class="demo demo--attachment">
+          <p class="demo__text">
+            Faites défiler cette boîte, puis la page, pour constater le
+            mouvement du fond.
+          </p>
+          <p class="demo__text">
+            Avec <code class="exercise__code">local</code>, le fond suit le
+            texte à l’intérieur de la boîte.
+          </p>
+          <p class="demo__text">
+            Avec <code class="exercise__code">fixed</code>, il reste accroché à
+            la fenêtre.
+          </p>
+        </div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Testez
+          <code class="exercise__code">scroll</code>,
+          <code class="exercise__code">fixed</code> et
+          <code class="exercise__code">local</code>. Faites défiler la boîte,
+          puis la page, pour observer les différences.
+        </p>
+      </section>
+
+      <!-- 06.Background Origin ------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">06 · La zone de référence</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-origin</code
+          >
+        </h2>
+        <p class="exercise__text">
+          L’origine définit la zone utilisée pour positionner l’image : bordure,
+          remplissage (<em>padding</em>) ou contenu.
+        </p>
+        <p class="exercise__text">
+          La valeur par défaut est
+          <code class="exercise__code">padding-box</code>.
+        </p>
+        <div class="demo demo--origin"></div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Par défaut, l’image d’arrière-plan est
+          positionnée en haut à gauche de la zone de référence. Changez son
+          origine et comparez son emplacement.
+        </p>
+      </section>
+
+      <!-- 07. Background Clip ------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">07 · La zone peinte</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title"
+            >background-clip</code
+          >
+        </h2>
+        <p class="exercise__text">
+          Le fond est peint jusqu’à la bordure, au bord intérieur de celle-ci ou
+          au bord du contenu.
+        </p>
+        <div class="demo demo--clip"></div>
+
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Testez les différentes valeurs de
+          <code class="exercise__code">background-clip</code>. Modifiez la
+          couleur de bordure ou l’épaisseur du <em>padding</em> pour mieux voir
+          les limites du fond.
+        </p>
+      </section>
+
+      <!-- 08. Background Shorthand --------------------------------- -->
+
+      <section class="exercise">
+        <p class="exercise__number">08 · Le raccourci</p>
+        <h2 class="exercise__title">
+          <code class="exercise__code exercise__code--title">background</code>
+        </h2>
+        <p class="exercise__text">
+          La propriété raccourcie
+          <code class="exercise__code">background</code> permet de combiner
+          plusieurs sous-propriétés en une seule déclaration. Attention : elle
+          <strong>réinitialise</strong> les sous-propriétés non précisées.
+        </p>
+        <div class="demo demo--shorthand"></div>
+        <p class="exercise__challenge">
+          <strong>À essayer :</strong> Comparez le résultat avec la version
+          détaillée de l’exercice 01 : il doit être identique. Retirez la taille
+          ou la position du raccourci pour observer l’effet de la
+          réinitialisation.
+        </p>
+        <p class="exercise__remarque">
+          <strong>Remarque :</strong> La barre oblique
+          <code class="exercise__code">/</code> sépare
+          <code class="exercise__code">background-position</code> de
+          <code class="exercise__code">background-size</code>. Avec plusieurs
+          couches, la couleur de fond ne peut figurer que dans la
+          <strong>dernière</strong>.
+        </p>
+      </section>
+    </main>
+    <footer class="page-footer">TP2 · CSS backgrounds</footer>
+  </body>
+</html>

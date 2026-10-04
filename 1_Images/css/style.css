@@ -1,0 +1,191 @@
+:root {
+  --ink: hsl(212, 55%, 20%);
+  --muted: hsl(212, 18%, 42%);
+  --primary: hsl(178, 62%, 30%);
+  --paper: hsl(210, 36%, 95%);
+  --line: hsl(210, 18%, 85%);
+  --accent: hsl(39, 87%, 62%);
+  --ff-sans: "Roboto", sans-serif;
+}
+/* -- Reset ---------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  /* ➡️ display: block; : Par défaut, les navigateurs traitent les images et les SVG comme du texte (inline). Cela crée un espace vide indésirable (souvent 3 ou 4 pixels) sous l'élément, prévu pour les lettres qui descendent sous la ligne (comme "p" ou "j"). Passer en block supprime ce problème.*/
+
+  /* ➡️ max-width: 100%; : Rend les médias responsives. L'image ou le SVG ne pourra jamais déborder de son conteneur parent, même s'il est techniquement plus grand. */
+
+  /* ➡️ height: auto; : Travaille de pair avec max-width. Cela garantit que l'élément conserve toujours ses proportions d'origine sans être écrasé ou étiré. */
+}
+
+/* -- Styles généraux -----------  */
+body {
+  /* Pas de marges externes */
+  margin: 0;
+  /* Marge interne */
+  padding: 0 1.25em 2em;
+  /* Police de caractères */
+  font-family: var(--ff-sans);
+  /* Couleur du texte */
+  color: var(--ink);
+  /* Espacement des lignes Interlignage */
+  line-height: 1.65;
+  /* Couleur de l'arrière-plan */
+  background-color: var(--paper);
+}
+
+/* -- Espace de démonstration -----------  */
+.demo {
+  /* Hauteur minimale */
+  min-height: 12rem;
+  /* Centrer le contenu */
+  align-content: center;
+  /* Marge interne */
+  padding: 1.5rem;
+  /* Bordure arrondie */
+  border-radius: 0.5625rem;
+  /* Arrière-plan */
+  background-color: var(--paper);
+}
+
+/* -- 01 · L'image -----------  */
+.test-image {
+  /* ➡️ Centre l'image à l'aide des marges externes */
+
+  /* ➡️ Modifiez la largeur de l’image, sa hauteur et/ou son ratio */
+}
+
+/* -- 02 · Adaptation de l'image -----------  */
+/* Adaptation de l'image à son conteneur avec object-fit et object-position */
+.avatar {
+  /* ➡️ Position relative pour permettre le positionnement absolu des enfants */
+
+  /* ➡️ V1 : Le rognage est porté par le conteneur */
+
+  /* ➡️ Valeur des marges externes permettant de centrer automatiquement l'élément */
+
+  /* ➡️ Testez les dimensions */
+
+  /* ➡️ Testez le ratio */
+
+  /* ➡️ Testez border-radius  */
+
+  /* ➡️ Testez l'ombre portée */
+  /* Valeur de repli si la couleur relative n'est pas supportée */
+}
+
+.avatar__img {
+  /* ➡️ Adaptation de l'image à son conteneur largeur et hauteur */
+
+  /* ➡️ Testez les propriétés object-fit et object-position */
+
+  /* ➡️ V2 Le rognage est porté par l'image : le badge peut déborder du parent */
+}
+
+/* -- MODIFIERS BEM -------------- */
+/* -- 03 · La taille -----------  */
+.avatar--large {
+  /* ➡️ Complétez */
+}
+
+/* -- 04 · La bordure -----------  */
+.avatar--bordered {
+  /* ➡️ Complétez */
+}
+
+/* -- 05 · La forme carrée -----------  */
+.avatar--square {
+  /* ➡️ Complétez */
+}
+
+/* -- 06 · Le dégradé -----------  */
+.avatar--b-gradient {
+  /* ➡️ Bordure 10px solid transparente */
+
+  /* ➡️ Arrière-plan : Dégradé linéaire :
+      45deg,
+      #f4a441 0%,
+      #e65c48 25%,
+      #d92e50 50%,
+      #c52d86 75%,
+      #a91fa0 100%
+  */
+
+  /* border-box (valeur unique) = origine ET zone peinte : le dégradé part du bord extérieur et ne se répète pas - valeur de background-origin */
+}
+
+/* -- 07 · Le contour double -----------  */
+.avatar--b-double {
+  /* ➡️ Outline direct sur le conteneur avec un décalage négatif */
+}
+
+/* -- 07 bis · Le contour avec ::after -----------  */
+.avatar--b-after::after {
+  /* Pseudo-élément pour créer un contour supplémentaire */
+  /* ➡️ Contenu vide */
+
+  /* ➡️ Positionnement absolu */
+
+  /* ➡️ Définition de la zone d'affichage */
+
+  /* ➡️ Héritage du border-radius du parent */
+
+  /* ➡️ Style du contour */
+
+  /* ➡️ Décalage du contour */
+
+  /* ➡️ Désactivation des événements de souris */
+
+  /* ➡️ Testez différentes valeurs d'outline-offset et de style sur le pseudo-élément */
+}
+
+/* -- 08 · Le badge -----------  */
+.avatar__badge {
+  /* ➡️ Positionnement absolu */
+
+  /* ➡️ Z-index pour assurer le placement au-dessus des autres éléments */
+
+  /* ➡️ Déplacez le badge avec top, right, bottom et left */
+  /* Centre du badge sur le cercle à 45° : 14,6 % du bord (50 % − 50 % × cos 45°), moins la moitié du badge (1em) */
+
+  /* ➡️ Taille du badge */
+
+  /* ➡️ Centrage vertical et horizontal */
+
+  /* ➡️ Style du texte */
+
+  /* ➡️ Alignement du texte au centre */
+
+  /* ➡️ Style de la bordure */
+
+  /* ➡️ Bordure arrondie */
+
+  /* ➡️ Arrière-plan */
+}
+
+.avatar__icon {
+  /* ➡️ Centrage de l'icône avec les marges externes */
+
+  /* ➡️ Taille de l'icône */
+}
+
+/* -- 09 · La collection -----------  */
+.avatarList {
+  /* ➡️ Style de la liste */
+  margin: 1.5rem 0 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.avatarList__item {
+  /* ➡️ Style des éléments de la liste */
+  display: inline-block;
+  margin: 1rem;
+  vertical-align: middle;
+}

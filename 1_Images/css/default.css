@@ -1,0 +1,120 @@
+.lesson {
+  width: min(100%, 61.25rem);
+  margin-inline: auto;
+}
+
+.page-header {
+  width: min(100%, 61.25rem);
+  margin-inline: auto;
+  padding: 4rem 1rem 2rem;
+  text-align: center;
+}
+
+.page-header__eyebrow {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-header__title {
+  margin: 0.2em 0;
+  font-size: clamp(2.3rem, 7vw, 4.5rem);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.page-header__intro {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.page-header__code {
+  padding: 0.12em 0.35em;
+  border-radius: 0.25rem;
+  background: #edf1f4;
+  color: #994b22;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.exercise {
+  width: 100%;
+  margin: 1.25rem 0;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border: 0.0625rem solid var(--line);
+  border-radius: 0.875rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgb(23 49 79 / 5%);
+  text-align: left;
+}
+
+.exercise__number {
+  margin: 0 0 0.4rem;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.exercise__code {
+  padding: 0.12em 0.35em;
+  border-radius: 0.25rem;
+  background: #edf1f4;
+  color: #994b22;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.9em;
+}
+
+.exercise__title {
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+  font-size: clamp(1.35rem, 4vw, 1.8rem);
+  letter-spacing: -0.025em;
+}
+
+.exercise__text {
+  margin: 0.4rem 0 1rem;
+  color: var(--muted);
+}
+
+.exercise__challenge {
+  margin: 1rem 0 0;
+  padding: 0.8rem 1rem;
+  border-left: 0.1875rem solid var(--primary);
+  background: #f1f7f5;
+  color: #314d54;
+}
+
+.exercise__remarque {
+  margin: 1rem 0 0;
+  padding: 0.8rem 1rem;
+  border-left: 0.1875rem solid var(--ink);
+  background: #f1f5f7;
+  color: #314d54;
+}
+
+.page-footer {
+  width: min(100%, 61.25rem);
+  margin-inline: auto;
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+pre.exercise__code {
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+}
