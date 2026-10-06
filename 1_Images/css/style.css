@@ -95,7 +95,13 @@ body {
 
 /* -- 04 · La bordure -----------  */
 .avatar--bordered {
-  /* ➡️ Complétez */
+  /* ➡️ Complétez avec border-width, border-style, border-color */
+  /* ➡️ Complétez avec box-shadow : 
+        • offset-x (requis) : Décalage horizontal. Une valeur positive décale l'ombre vers la droite, et une valeur négative vers la gauche.
+        • offset-y (requis) : Décalage vertical. Une valeur positive décale l'ombre vers le bas, et une valeur négative vers le haut.
+        • blur (flou, optionnel) : Rayon de flou. Plus la valeur est grande, plus l'ombre est diffuse (ne peut pas être négatif). Défaut : 0 (bord net).
+        • spread (propagation, optionnel) : Taille de l'ombre. Une valeur positive élargit l'ombre, une valeur négative la réduit. Défaut : 0.
+        • color (optionnel) : Couleur de l'ombre (ex. red, #000, rgb(0 0 0 / 0.3)). Si elle est absente, la couleur du texte de l'élément est utilisée.*/
 }
 
 /* -- 05 · La forme carrée -----------  */
